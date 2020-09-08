@@ -29,7 +29,7 @@ class MediaCellViewModel {
   }
   
   var description: String {
-    return media?.description ?? "No description available."
+    return media?.longDescription ?? "No description available."
   }
   
   init(media: Media) {

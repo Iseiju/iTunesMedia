@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Unrealm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    registerRealmables()
+    migration()
+    
     return true
+  }
+  
+  private func registerRealmables() {
+    Realm.registerRealmables(Media.self)
+  }
+  
+  private func migration() {
+    let config = Realm.Configuration(
+      schemaVersion: 2,
+
+      migrationBlock: { migration, oldSchemaVersion in
+        if (oldSchemaVersion < 1) { }
+      })
+    
+    Realm.Configuration.defaultConfiguration = config
+    
+    do {
+      let _ = try Realm()
+    } catch  {
+      print(error.localizedDescription)
+    }
   }
 }
 

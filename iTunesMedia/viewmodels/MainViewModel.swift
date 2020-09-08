@@ -10,8 +10,11 @@ import Alamofire
 import Foundation
 import RxCocoa
 import RxSwift
+import Unrealm
 
 class MainViewModel {
+  
+  let realm = try! Realm()
   
   let disposeBag = DisposeBag()
   
@@ -25,11 +28,29 @@ class MainViewModel {
         
       case .success(let pagedResponse):
         let listOfMedia = pagedResponse.results
+        
+        try! self.realm.write {
+          self.realm.add(listOfMedia)
+        }
+        
         self.listOfMedia.accept(listOfMedia)
         completion(pagedResponse.results.isEmpty, nil)
         
       case .failure(let error as NSError):
-        completion(true, error)
+        let realmItems = self.realm.objects(Media.self)
+        
+        if realmItems.isEmpty {
+          completion(true, error)
+        } else {
+          var listOfMedia: [Media] = []
+          
+          for media in listOfMedia {
+            listOfMedia.append(media)
+          }
+          
+          self.listOfMedia.accept(listOfMedia)
+          completion(listOfMedia.isEmpty, nil)
+        }
       }
     }
   }

@@ -7,20 +7,21 @@
 //
 
 import Foundation
+import Unrealm
 
-struct Media: Codable {
-  
+struct Media: Realmable, Codable {
+
   var title: String?
-  var artwork: String
+  var artwork: String = ""
   var price: Double?
-  var genre: String
-  var description: String?
+  var genre: String = ""
+  var longDescription: String?
   
   private enum CodingKeys: String, CodingKey {
     case title = "trackName"
     case artwork = "artworkUrl100"
     case price = "trackPrice"
     case genre = "primaryGenreName"
-    case description = "longDescription"
+    case longDescription
   }
 }
