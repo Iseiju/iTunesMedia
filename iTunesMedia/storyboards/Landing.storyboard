@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Landing Controller-->
         <scene sceneID="rsl-9X-ROU">
             <objects>
-                <viewController id="vk4-pH-bI0" sceneMemberID="viewController">
+                <viewController id="vk4-pH-bI0" customClass="LandingController" customModule="iTunesMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TMN-DI-oGq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="140" id="vDI-08-gMT"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8Ax-A0-fXq">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8Ax-A0-fXq">
                                 <rect key="frame" x="169" y="403.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
@@ -36,10 +36,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ctd-bJ-paG"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="8Ax-A0-fXq" id="ESy-IW-jec"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TyI-cB-7fy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="70"/>
+            <point key="canvasLocation" x="-151.19999999999999" y="69.715142428785612"/>
         </scene>
     </scenes>
     <resources>
