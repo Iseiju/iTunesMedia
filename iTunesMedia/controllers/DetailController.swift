@@ -13,6 +13,8 @@ class DetailController: UIViewController {
   
   var viewModel: DetailViewModel?
 
+  @IBOutlet weak var parentViewHeightConstraint: NSLayoutConstraint!
+  
   @IBOutlet weak var backgroundImageView: UIImageView!
   @IBOutlet weak var artworkImageView: UIImageView!
   
@@ -28,6 +30,8 @@ class DetailController: UIViewController {
   }
   
   private func initViews() {
+    parentViewHeightConstraint.constant = UIScreen.main.bounds.size.height / 2.5
+    
     let url = URL(string: self.viewModel?.artwork ?? "")
     
     backgroundImageView
