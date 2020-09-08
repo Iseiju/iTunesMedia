@@ -12,5 +12,14 @@ class MainController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    initViews()
+  }
+  
+  private func initViews() {
+    navigationController?.navigationBar.barTintColor = .white
+    navigationController?
+      .navigationBar
+      .titleTextAttributes = [NSAttributedString.Key.foregroundColor: R.color.accentColor() ?? UIColor()]
   }
 }
