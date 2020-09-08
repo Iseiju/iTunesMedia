@@ -30,13 +30,19 @@ class MainController: UIViewController {
   private func initViews() {
     let accentColor = R.color.accentColor() ?? UIColor()
     
-    navigationController?.navigationBar.barTintColor = .white
+    if #available(iOS 13.0, *) {
+      navigationController?.navigationBar.barTintColor = .systemBackground
+    } else {
+      navigationController?.navigationBar.barTintColor = .white
+    }
+
     navigationController?
       .navigationBar
       .titleTextAttributes = [NSAttributedString.Key.foregroundColor: accentColor]
   }
   
-  private func initTableView() {    
+  private func initTableView() {
+    tableView.separatorStyle = .none
     tableView.innerTable.register(R.nib.mediaCell)
     
     tableView.delegate = self

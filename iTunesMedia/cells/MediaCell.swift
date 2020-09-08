@@ -6,6 +6,7 @@
 //  Copyright © 2020 dummy. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
 
 class MediaCell: UITableViewCell {
@@ -29,6 +30,13 @@ class MediaCell: UITableViewCell {
   
   func initCell(_ cellViewModel: MediaCellViewModel) {
     self.cellViewModel = cellViewModel
+    
+    let url = URL(string: self.cellViewModel?.artwork ?? "")
+    
+    artworkImageView.kf.indicatorType = .activity
+    artworkImageView.kf.setImage(with: url,
+                                 placeholder: R.image.icPlaceholder(),
+                                 options: [.transition(.fade(0.2))])
     
     self.titleLabel.text = self.cellViewModel?.title
     self.genreLabel.text = self.cellViewModel?.genre
