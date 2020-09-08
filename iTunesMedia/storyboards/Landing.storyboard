@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vk4-pH-bI0">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="rsl-9X-ROU">
+            <objects>
+                <viewController id="vk4-pH-bI0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TMN-DI-oGq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-logo" translatesAutoresizingMaskIntoConstraints="NO" id="TJb-ug-fsX">
+                                <rect key="frame" x="117.5" y="243.5" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="J0e-bg-aAh"/>
+                                    <constraint firstAttribute="height" constant="140" id="vDI-08-gMT"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8Ax-A0-fXq">
+                                <rect key="frame" x="169" y="403.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8Ax-A0-fXq" firstAttribute="centerX" secondItem="TMN-DI-oGq" secondAttribute="centerX" id="AeM-ft-v8g"/>
+                            <constraint firstItem="TJb-ug-fsX" firstAttribute="centerX" secondItem="TMN-DI-oGq" secondAttribute="centerX" id="OKm-by-bms"/>
+                            <constraint firstItem="8Ax-A0-fXq" firstAttribute="top" secondItem="TJb-ug-fsX" secondAttribute="bottom" constant="20" id="o8T-4l-IhC"/>
+                            <constraint firstItem="TJb-ug-fsX" firstAttribute="centerY" secondItem="TMN-DI-oGq" secondAttribute="centerY" constant="-20" id="p4b-77-WWY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ctd-bJ-paG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TyI-cB-7fy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-151" y="70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic-logo" width="256" height="256"/>
+    </resources>
+</document>
