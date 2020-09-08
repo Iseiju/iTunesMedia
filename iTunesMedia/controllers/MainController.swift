@@ -13,16 +13,17 @@ import UIKit
 
 protocol MainControllerDelegate {
   
-  func didTapMedia(forIndexPath indexPath: IndexPath, controller: MainController)
+  func didTapMedia(forCellViewModel cellViewModel: MediaCellViewModel,
+                   controller: MainController)
 }
 
 class MainController: UIViewController {
   
   var delegate: MainControllerDelegate?
   
-  let disposeBag = DisposeBag()
+  var viewModel: MainViewModel?
   
-  let viewModel = MainViewModel()
+  let disposeBag = DisposeBag()
 
   @IBOutlet weak var tableView: StatefulTableView!
   
@@ -61,7 +62,7 @@ class MainController: UIViewController {
   }
   
   private func initObservables() {
-    viewModel
+    viewModel?
       .cellViewModels()
       .bind(to: tableView
         .innerTable
@@ -76,7 +77,11 @@ class MainController: UIViewController {
       .rx
       .itemSelected
       .subscribe(onNext: { indexPath in
-        self.delegate?.didTapMedia(forIndexPath: indexPath, controller: self)
+        guard let cellViewModel = self.viewModel?
+          .cellViewModels()
+          .value[indexPath.row]
+        else { return }
+        self.delegate?.didTapMedia(forCellViewModel: cellViewModel, controller: self)
       }).disposed(by: disposeBag)
   }
 }
@@ -97,7 +102,7 @@ extension MainController: StatefulTableDelegate {
   
   func statefulTable(_ tableView: StatefulTableView,
                      pullToRefreshCompletion completion: @escaping InitialLoadCompletion) {
-    viewModel.getMedia(completion: completion)
+    viewModel?.getMedia(completion: completion)
   }
   
   func statefulTable(_ tableView: StatefulTableView,

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ic-placeholder.png",
+      "filename" : "ic-vplaceholder.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ic-placeholder-1.png",
+      "filename" : "ic-vplaceholder-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ic-placeholder-2.png",
+      "filename" : "ic-vplaceholder-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

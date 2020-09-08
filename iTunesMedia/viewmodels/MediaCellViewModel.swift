@@ -10,7 +10,7 @@ import Foundation
 
 class MediaCellViewModel {
   
-  var media: Media?
+  private var media: Media?
   
   var artwork: String {
     return media?.artwork ?? ""
@@ -26,6 +26,10 @@ class MediaCellViewModel {
   
   var price: String {
     return media?.price != nil ? "$\(String(media?.price ?? 0.0))" : "No price available"
+  }
+  
+  var description: String {
+    return media?.description ?? "No description available."
   }
   
   init(media: Media) {

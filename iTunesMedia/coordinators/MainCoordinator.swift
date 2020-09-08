@@ -20,6 +20,8 @@ class MainCoordinator {
   
   func presentMain() {
     guard let mainController = R.storyboard.main.mainController() else { return }
+    
+    mainController.viewModel = MainViewModel()
     mainController.delegate = self
     
     let navigationController = UINavigationController(rootViewController: mainController)
@@ -31,10 +33,11 @@ class MainCoordinator {
 
 extension MainCoordinator: MainControllerDelegate {
   
-  func didTapMedia(forIndexPath indexPath: IndexPath, controller: MainController) {
+  func didTapMedia(forCellViewModel cellViewModel: MediaCellViewModel,
+                   controller: MainController) {
     guard let navController = controller.navigationController else { return }
     let detailCoordinator = DetailCoordinator(navigationController: navController)
     
-    detailCoordinator.pushDetail()
+    detailCoordinator.pushDetail(forCellViewModel: cellViewModel)
   }
 }

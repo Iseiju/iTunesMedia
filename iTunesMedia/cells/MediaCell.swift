@@ -35,7 +35,7 @@ class MediaCell: UITableViewCell {
     
     artworkImageView.kf.indicatorType = .activity
     artworkImageView.kf.setImage(with: url,
-                                 placeholder: R.image.icPlaceholder(),
+                                 placeholder: R.image.icVplaceholder(),
                                  options: [.transition(.fade(0.2))])
     
     self.titleLabel.text = self.cellViewModel?.title

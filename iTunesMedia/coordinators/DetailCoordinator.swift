@@ -18,8 +18,10 @@ class DetailCoordinator {
     self.navigationController = navigationController
   }
   
-  func pushDetail() {
+  func pushDetail(forCellViewModel cellViewModel: MediaCellViewModel) {
     guard let detailController = R.storyboard.main.detailController() else { return }
+    
+    detailController.viewModel = DetailViewModel(cellViewModel: cellViewModel)
     
     navigationController?.pushViewController(detailController, animated: true)
   }

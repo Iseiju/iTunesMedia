@@ -15,7 +15,7 @@ class MainViewModel {
   
   let disposeBag = DisposeBag()
   
-  let listOfMedia = BehaviorRelay<[Media]>(value: [])
+  private let listOfMedia = BehaviorRelay<[Media]>(value: [])
   
   func getMedia(completion: @escaping (_ isEmpty: Bool, _ errorOrNil: NSError?) -> Void) {
     let url = "https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all"
