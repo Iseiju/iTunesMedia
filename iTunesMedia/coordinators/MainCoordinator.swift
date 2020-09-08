@@ -25,6 +25,9 @@ class MainCoordinator {
     
     navigationController.modalPresentationStyle = .fullScreen
     
+    let media = MainViewModel()
+    media.getMedia()
+    
     presentedController?.present(navigationController, animated: true, completion: nil)
   }
 }
