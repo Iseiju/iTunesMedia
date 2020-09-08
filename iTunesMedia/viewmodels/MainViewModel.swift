@@ -26,6 +26,7 @@ class MainViewModel {
       case .success(let pagedResponse):
         let listOfMedia = pagedResponse.results
         self.listOfMedia.accept(listOfMedia)
+        print(pagedResponse.results.count)
         completion(pagedResponse.results.isEmpty, nil)
         
       case .failure(let error as NSError):

@@ -27,7 +27,7 @@ class MediaCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
   
-  private func initCell(forCellViewModel cellViewModel: MediaCellViewModel) {
+  func initCell(_ cellViewModel: MediaCellViewModel) {
     self.cellViewModel = cellViewModel
     
     self.titleLabel.text = self.cellViewModel?.title

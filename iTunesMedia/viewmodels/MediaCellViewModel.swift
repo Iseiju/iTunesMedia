@@ -25,7 +25,7 @@ class MediaCellViewModel {
   }
   
   var price: String {
-    return media?.price != nil ? String(media?.price ?? 0.0) : "No price available"
+    return media?.price != nil ? "$\(String(media?.price ?? 0.0))" : "No price available"
   }
   
   init(media: Media) {
