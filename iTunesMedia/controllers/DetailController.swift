@@ -23,5 +23,28 @@ class DetailController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    initViews()
+  }
+  
+  private func initViews() {
+    let url = URL(string: self.viewModel?.artwork ?? "")
+    
+    backgroundImageView
+      .kf
+      .setImage(with: url,
+                placeholder: R.image.icHplaceholder(),
+                options: [.transition(.fade(0.2))])
+    
+    artworkImageView
+      .kf
+      .setImage(with: url,
+                placeholder: R.image.icVplaceholder(),
+                options: [.transition(.fade(0.2))])
+    
+    titleLabel.text = viewModel?.title
+    genreLabel.text = viewModel?.genre
+    priceLabel.text = viewModel?.price
+    descriptionLabel.text = viewModel?.description
   }
 }
