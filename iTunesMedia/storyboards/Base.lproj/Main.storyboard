@@ -15,9 +15,24 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvQ-38-SDl" customClass="StatefulTableView" customModule="StatefulTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wvQ-38-SDl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6Gv-87-Fj1"/>
+                            <constraint firstAttribute="bottom" secondItem="wvQ-38-SDl" secondAttribute="bottom" id="K0C-FW-9aj"/>
+                            <constraint firstItem="wvQ-38-SDl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uUa-yc-0Lh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wvQ-38-SDl" secondAttribute="trailing" id="vyn-9R-HSh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="wvQ-38-SDl" id="jwc-X1-tM6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
