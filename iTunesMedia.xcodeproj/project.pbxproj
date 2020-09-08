@@ -13,6 +13,7 @@
 		E80ABE3625077F1900640E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3525077F1900640E3F /* Assets.xcassets */; };
 		E80ABE3925077F1900640E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3725077F1900640E3F /* LaunchScreen.storyboard */; };
 		E831D248250784A7003114A9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831D247250784A7003114A9 /* R.generated.swift */; };
+		E831D25C25078B7F003114A9 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E831D25B25078B7F003114A9 /* Landing.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E80ABE3825077F1900640E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E80ABE3A25077F1900640E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E831D247250784A7003114A9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E831D25B25078B7F003114A9 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +80,9 @@
 		E80ABE2B25077F1800640E3F /* iTunesMedia */ = {
 			isa = PBXGroup;
 			children = (
+				E831D25A25078B70003114A9 /* main */,
+				E831D25925078B64003114A9 /* landing */,
 				E831D252250789E9003114A9 /* launchscreen */,
-				E80ABE3225077F1800640E3F /* Main.storyboard */,
 				E831D247250784A7003114A9 /* R.generated.swift */,
 				E80ABE2C25077F1800640E3F /* AppDelegate.swift */,
 				E80ABE3525077F1900640E3F /* Assets.xcassets */,
@@ -91,9 +94,49 @@
 		E831D252250789E9003114A9 /* launchscreen */ = {
 			isa = PBXGroup;
 			children = (
-				E80ABE3725077F1900640E3F /* LaunchScreen.storyboard */,
+				E831D26025078BDE003114A9 /* storyboards */,
 			);
 			path = launchscreen;
+			sourceTree = "<group>";
+		};
+		E831D25925078B64003114A9 /* landing */ = {
+			isa = PBXGroup;
+			children = (
+				E831D25F25078BD2003114A9 /* storyboards */,
+			);
+			path = landing;
+			sourceTree = "<group>";
+		};
+		E831D25A25078B70003114A9 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				E831D25D25078BC4003114A9 /* storyboards */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		E831D25D25078BC4003114A9 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E80ABE3225077F1800640E3F /* Main.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		E831D25F25078BD2003114A9 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E831D25B25078B7F003114A9 /* Landing.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		E831D26025078BDE003114A9 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E80ABE3725077F1900640E3F /* LaunchScreen.storyboard */,
+			);
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +202,7 @@
 			files = (
 				E80ABE3925077F1900640E3F /* LaunchScreen.storyboard in Resources */,
 				E80ABE3625077F1900640E3F /* Assets.xcassets in Resources */,
+				E831D25C25078B7F003114A9 /* Landing.storyboard in Resources */,
 				E80ABE3425077F1800640E3F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
