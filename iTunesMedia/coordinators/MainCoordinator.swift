@@ -20,11 +20,21 @@ class MainCoordinator {
   
   func presentMain() {
     guard let mainController = R.storyboard.main.mainController() else { return }
+    mainController.delegate = self
     
     let navigationController = UINavigationController(rootViewController: mainController)
-    
     navigationController.modalPresentationStyle = .fullScreen
     
     presentedController?.present(navigationController, animated: true, completion: nil)
+  }
+}
+
+extension MainCoordinator: MainControllerDelegate {
+  
+  func didTapMedia(forIndexPath indexPath: IndexPath, controller: MainController) {
+    guard let navController = controller.navigationController else { return }
+    let detailCoordinator = DetailCoordinator(navigationController: navController)
+    
+    detailCoordinator.pushDetail()
   }
 }

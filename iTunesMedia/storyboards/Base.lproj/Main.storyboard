@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="116"/>
         </scene>
-        <!--Detail Controller-->
+        <!--Details-->
         <scene sceneID="Ahy-tf-gtR">
             <objects>
-                <viewController id="kLe-iW-3Pz" customClass="DetailController" customModule="iTunesMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailController" title="Details" id="kLe-iW-3Pz" customClass="DetailController" customModule="iTunesMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D3f-9M-ohf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

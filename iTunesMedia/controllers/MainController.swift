@@ -11,7 +11,14 @@ import RxSwift
 import StatefulTableView
 import UIKit
 
+protocol MainControllerDelegate {
+  
+  func didTapMedia(forIndexPath indexPath: IndexPath, controller: MainController)
+}
+
 class MainController: UIViewController {
+  
+  var delegate: MainControllerDelegate?
   
   let disposeBag = DisposeBag()
   
@@ -63,6 +70,14 @@ class MainController: UIViewController {
                cellType: MediaCell.self)) { index, cellViewModel, cell in
                  cell.initCell(cellViewModel)
     }.disposed(by: disposeBag)
+    
+    tableView
+      .innerTable
+      .rx
+      .itemSelected
+      .subscribe(onNext: { indexPath in
+        self.delegate?.didTapMedia(forIndexPath: indexPath, controller: self)
+      }).disposed(by: disposeBag)
   }
 }
 
