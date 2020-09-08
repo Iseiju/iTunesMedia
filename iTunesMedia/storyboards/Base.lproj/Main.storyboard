@@ -85,7 +85,7 @@
                                                         </view>
                                                         <blurEffect style="regular"/>
                                                     </visualEffectView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94z-Kk-Va1">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94z-Kk-Va1" customClass="MDCCard">
                                                         <rect key="frame" x="12" y="144" width="351" height="124"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zIm-9q-tjM">

@@ -3,6 +3,42 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
+  - MaterialComponents/AnimationTiming (111.0.0)
+  - MaterialComponents/Availability (111.0.0)
+  - MaterialComponents/Cards (111.0.0):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+  - MaterialComponents/Elevation (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (111.0.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Color (111.0.0):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/Icons/Base (111.0.0)
+  - MaterialComponents/private/Icons/ic_check_circle (111.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Math (111.0.0)
+  - MaterialComponents/Ripple (111.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (111.0.0)
+  - MaterialComponents/ShadowLayer (111.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (111.0.0):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
@@ -26,6 +62,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2.2)
   - Kingfisher (~> 5.14.1)
+  - MaterialComponents/Cards (~> 111.0.0)
   - R.swift (~> 5.2.2)
   - RealmSwift (~> 5.0.3)
   - RxCocoa (~> 5.1.1)
@@ -37,6 +74,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - MaterialComponents
     - R.swift
     - R.swift.Library
     - Realm
@@ -59,6 +97,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  MaterialComponents: 533042da998b97ad13a6f544268f8026e8161cc5
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
@@ -70,6 +109,6 @@ SPEC CHECKSUMS:
   StatefulTableView: e9951caafc30a574978cd6bf9a2c4e55707fa6b3
   Unrealm: ba1c168935344084ba28dd6bff5ded86f4837d7f
 
-PODFILE CHECKSUM: 3de170de996e7658a051191f2a8d5d42533048d0
+PODFILE CHECKSUM: 1042c401cb82b11cd4d07a8a0385674f437e8066
 
 COCOAPODS: 1.9.1

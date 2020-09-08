@@ -8,6 +8,7 @@ target 'iTunesMedia' do
   # Pods for iTunesMedia
   pod 'Alamofire', '~> 5.2.2'
   pod 'Kingfisher', '~> 5.14.1'
+  pod 'MaterialComponents/Cards', '~> 111.0.0'
   pod 'RealmSwift', '~> 5.0.3'
   pod 'R.swift', '~> 5.2.2'
   pod 'RxCocoa', '~> 5.1.1'
