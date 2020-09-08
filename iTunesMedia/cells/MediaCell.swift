@@ -9,6 +9,8 @@
 import UIKit
 
 class MediaCell: UITableViewCell {
+  
+  var cellViewModel: MediaCellViewModel?
 
   @IBOutlet weak var artworkImageView: UIImageView!
   
@@ -18,9 +20,18 @@ class MediaCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    self.selectionStyle = .none
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-  } 
+  }
+  
+  private func initCell(forCellViewModel cellViewModel: MediaCellViewModel) {
+    self.cellViewModel = cellViewModel
+    
+    self.titleLabel.text = self.cellViewModel?.title
+    self.genreLabel.text = self.cellViewModel?.genre
+    self.priceLabel.text = self.cellViewModel?.price
+  }
 }
