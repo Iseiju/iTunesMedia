@@ -17,9 +17,9 @@ class MainViewModel {
     AF.request(url, method: .get).responseDecodable(of: PagedResponse.self) { response in
       switch response.result {
       case .success(let results):
-        print("success")
+        print(results.count)
       case .failure(let error as NSError):
-        print("error")
+        print(error.localizedDescription)
       }
     }
   }
