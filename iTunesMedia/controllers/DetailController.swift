@@ -34,6 +34,9 @@ class DetailController: UIViewController {
     
     let url = URL(string: self.viewModel?.artwork ?? "")
     
+    backgroundImageView.kf.indicatorType = .activity
+    artworkImageView.kf.indicatorType = .activity
+    
     backgroundImageView
       .kf
       .setImage(with: url,
