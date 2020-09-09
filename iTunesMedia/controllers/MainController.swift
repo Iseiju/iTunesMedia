@@ -76,12 +76,13 @@ class MainController: UIViewController {
       .innerTable
       .rx
       .itemSelected
-      .subscribe(onNext: { indexPath in
-        guard let cellViewModel = self.viewModel?
+      .subscribe(onNext: { [weak self] indexPath in
+        guard let s = self else { return }
+        guard let cellViewModel = s.viewModel?
           .cellViewModels()
           .value[indexPath.row]
         else { return }
-        self.delegate?.didTapMedia(forCellViewModel: cellViewModel, controller: self)
+        s.delegate?.didTapMedia(forCellViewModel: cellViewModel, controller: s)
       }).disposed(by: disposeBag)
   }
 }
@@ -102,8 +103,8 @@ extension MainController: StatefulTableDelegate {
   
   func statefulTable(_ tableView: StatefulTableView,
                      pullToRefreshCompletion completion: @escaping InitialLoadCompletion) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-      self.viewModel?.getMedia(completion: completion)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+      self?.viewModel?.getMedia(completion: completion)
     }
   }
   

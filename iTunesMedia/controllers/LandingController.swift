@@ -20,9 +20,9 @@ class LandingController: UIViewController {
   }
 
   private func startAnimation() {
-    UIView.animate(withDuration: 0.4) {
-      self.activityIndicator.isHidden = false
-      self.activityIndicator.startAnimating()
+    UIView.animate(withDuration: 0.4) { [weak self] in
+      self?.activityIndicator.isHidden = false
+      self?.activityIndicator.startAnimating()
     }
   }
 
