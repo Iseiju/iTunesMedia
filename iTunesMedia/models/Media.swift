@@ -14,18 +14,19 @@ import RealmSwift
   dynamic var title: String?
   dynamic var collectionTitle: String?
   dynamic var artwork: String = ""
-  dynamic var price: Double?
-  dynamic var collectionPrice: Double?
   dynamic var genre: String = ""
   dynamic var longDescription: String?
   
+  dynamic var price: Double?
+  dynamic var collectionPrice: Double?
+
   private enum CodingKeys: String, CodingKey {
     case title = "trackName"
     case collectionTitle = "collectionName"
     case artwork = "artworkUrl100"
-    case price = "trackPrice"
-    case collectionPrice
     case genre = "primaryGenreName"
     case longDescription
+    case price = "trackPrice"
+    case collectionPrice
   }
 }
