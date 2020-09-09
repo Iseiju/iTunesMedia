@@ -42,12 +42,11 @@ PODS:
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
-  - Realm (5.0.3):
-    - Realm/Headers (= 5.0.3)
-  - Realm/Headers (5.0.3)
-  - RealmSwift (5.0.3):
-    - Realm (= 5.0.3)
-  - RuntimeNew (2.1.5)
+  - Realm (5.3.6):
+    - Realm/Headers (= 5.3.6)
+  - Realm/Headers (5.3.6)
+  - RealmSwift (5.3.6):
+    - Realm (= 5.3.6)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -55,20 +54,16 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - StatefulTableView (0.2.0)
-  - Unrealm (1.3.5):
-    - RealmSwift (= 5.0.3)
-    - RuntimeNew (= 2.1.5)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2.2)
   - Kingfisher (~> 5.14.1)
   - MaterialComponents/Cards (~> 111.0.0)
   - R.swift (~> 5.2.2)
-  - RealmSwift (~> 5.0.3)
+  - RealmSwift (~> 5.3.6)
   - RxCocoa (~> 5.1.1)
   - RxSwift (~> 5.1.1)
   - StatefulTableView (from `https://github.com/Iseiju/StatefulTableView.git`)
-  - Unrealm (~> 1.3.5)
 
 SPEC REPOS:
   trunk:
@@ -79,11 +74,9 @@ SPEC REPOS:
     - R.swift.Library
     - Realm
     - RealmSwift
-    - RuntimeNew
     - RxCocoa
     - RxRelay
     - RxSwift
-    - Unrealm
 
 EXTERNAL SOURCES:
   StatefulTableView:
@@ -100,15 +93,13 @@ SPEC CHECKSUMS:
   MaterialComponents: 533042da998b97ad13a6f544268f8026e8161cc5
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
-  Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
-  RealmSwift: 493c9f089cd3893b3959007973c0e4f640906ba0
-  RuntimeNew: ef34cf1783be4c1cbe798970bc590924dab5df87
+  Realm: cd400dd7e5b5bb5c8ae9842eecd73792369e6ec0
+  RealmSwift: 99a16dbdee5d6dfb3d91d56088a9f8c15c0871d1
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   StatefulTableView: e9951caafc30a574978cd6bf9a2c4e55707fa6b3
-  Unrealm: ba1c168935344084ba28dd6bff5ded86f4837d7f
 
-PODFILE CHECKSUM: 1042c401cb82b11cd4d07a8a0385674f437e8066
+PODFILE CHECKSUM: 6c14470b553d3bc531f9599d66e6299268ae1ca2
 
 COCOAPODS: 1.9.1

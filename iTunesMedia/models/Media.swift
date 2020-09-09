@@ -7,15 +7,15 @@
 //
 
 import Foundation
-import Unrealm
+import RealmSwift
 
-struct Media: Realmable, Codable {
+@objcMembers class Media: Object, Codable {
 
-  var title: String?
-  var artwork: String = ""
-  var price: Double?
-  var genre: String = ""
-  var longDescription: String?
+  dynamic var title: String?
+  dynamic var artwork: String = ""
+  dynamic var price: Double?
+  dynamic var genre: String = ""
+  dynamic var longDescription: String?
   
   private enum CodingKeys: String, CodingKey {
     case title = "trackName"

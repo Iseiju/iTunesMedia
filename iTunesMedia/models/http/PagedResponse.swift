@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PagedResponse: Codable {
+class PagedResponse: Codable {
   
   var count: Int
   var results: [Media]

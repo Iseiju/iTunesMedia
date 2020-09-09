@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Unrealm
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,19 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    registerRealmables()
     migration()
     
     return true
   }
   
-  private func registerRealmables() {
-    Realm.registerRealmables(Media.self)
-  }
-  
   private func migration() {
     let config = Realm.Configuration(
-      schemaVersion: 2,
+      schemaVersion: 3,
 
       migrationBlock: { migration, oldSchemaVersion in
         if (oldSchemaVersion < 1) { }
