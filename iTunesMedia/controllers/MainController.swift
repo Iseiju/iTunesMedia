@@ -102,7 +102,9 @@ extension MainController: StatefulTableDelegate {
   
   func statefulTable(_ tableView: StatefulTableView,
                      pullToRefreshCompletion completion: @escaping InitialLoadCompletion) {
-    viewModel?.getMedia(completion: completion)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.viewModel?.getMedia(completion: completion)
+    }
   }
   
   func statefulTable(_ tableView: StatefulTableView,
