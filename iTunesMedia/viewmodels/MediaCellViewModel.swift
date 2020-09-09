@@ -17,7 +17,7 @@ class MediaCellViewModel {
   }
   
   var title: String {
-    return media?.title ?? "No title available"
+    return (media?.title != nil ? media?.title : media?.collectionTitle) ?? "No title available"
   }
   
   var genre: String {
@@ -25,7 +25,10 @@ class MediaCellViewModel {
   }
   
   var price: String {
-    return media?.price != nil ? "$\(String(media?.price ?? 0.0))" : "No price available"
+    let mainPrice = "$\(String(media?.price ?? 0.0))"
+    let collectionPrice = "$\(String(media?.collectionPrice ?? 00))"
+    
+    return media?.price != nil ? mainPrice : collectionPrice
   }
   
   var description: String {
