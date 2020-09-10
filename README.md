@@ -43,8 +43,8 @@ Please see `MainCoordinator.swift` and `MainController.swift` for reference.
 # Persistence
 For persistence, I went with Realm as my preferred persistence stack since it's very straightforward when it comes to implementation and usage.
 
-The app stores the response (`Media`) from a successful network call (`func getMedia()`). 
-The stored data will then be called and be used if the network call should fail. If successful, the stored data will be updated.
+The app stores the response (`Media`) and also updates it for every successful network call (`func getMedia()`)
+The stored data will then be called and be used if the network call should fail.
 
 `Media` model conforms to both `Object` and `Codable` which is needed for Realm and coding/decoding respectively.
 
