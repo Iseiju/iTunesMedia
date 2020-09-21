@@ -44,8 +44,8 @@ class MainViewModel {
         } else {
           var listOfMedia: [Media] = []
           
-          for media in listOfMedia {
-            listOfMedia.append(media)
+          for items in realmItems {
+            listOfMedia.append(items)
           }
           
           self.listOfMedia.accept(listOfMedia)
