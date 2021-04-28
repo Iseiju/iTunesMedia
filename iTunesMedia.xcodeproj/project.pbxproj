@@ -10,6 +10,7 @@
 		4D4D8421E5D960F52CE4F653 /* Pods_iTunesMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF4B0FA20D0A0F41F0CF1A /* Pods_iTunesMedia.framework */; };
 		E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A666D2638CBDE00AC20EE /* CardView.swift */; };
 		E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C552638E3D500DFA74C /* String+Extensions.swift */; };
+		E63B2C5B2638E6A200DFA74C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C5A2638E6A200DFA74C /* APIClient.swift */; };
 		E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80ABE2C25077F1800640E3F /* AppDelegate.swift */; };
 		E80ABE3425077F1800640E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3225077F1800640E3F /* Main.storyboard */; };
 		E80ABE3625077F1900640E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3525077F1900640E3F /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		641F6714E337C7D47785A3BA /* Pods-iTunesMedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesMedia.debug.xcconfig"; path = "Target Support Files/Pods-iTunesMedia/Pods-iTunesMedia.debug.xcconfig"; sourceTree = "<group>"; };
 		E61A666D2638CBDE00AC20EE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E63B2C552638E3D500DFA74C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E63B2C5A2638E6A200DFA74C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E80ABE2925077F1800640E3F /* iTunesMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80ABE2C25077F1800640E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E80ABE3325077F1800640E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		E63B2C592638E69700DFA74C /* api */ = {
+			isa = PBXGroup;
+			children = (
+				E63B2C5A2638E6A200DFA74C /* APIClient.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 		E80ABE2025077F1800640E3F = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		E80ABE2B25077F1800640E3F /* iTunesMedia */ = {
 			isa = PBXGroup;
 			children = (
+				E63B2C592638E69700DFA74C /* api */,
 				E80ABE2C25077F1800640E3F /* AppDelegate.swift */,
 				E63B2C512638D14200DFA74C /* assets */,
 				E82DC8FB2507A49600BBA6E4 /* cells */,
@@ -361,6 +372,7 @@
 				E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */,
 				E8581768250791D40041BCCE /* LandingController.swift in Sources */,
 				E858176A250793790041BCCE /* MainCoordinator.swift in Sources */,
+				E63B2C5B2638E6A200DFA74C /* APIClient.swift in Sources */,
 				E81BEFA52507BFD000703FEE /* DetailController.swift in Sources */,
 				E82DC8F725079C2300BBA6E4 /* Media.swift in Sources */,
 				E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */,

@@ -10,8 +10,6 @@ import Foundation
 
 class MediaCellViewModel {
   
-  private var media: Media?
-  
   var artwork: String { return media?.artwork ?? "" }
   
   var title: String {
@@ -31,6 +29,8 @@ class MediaCellViewModel {
     return (media?.longDescription != nil ?
       media?.longDescription : media?.secondaryDescription?.htmlToString()) ??  "No description available"
   }
+  
+  private var media: Media?
   
   init(media: Media) {
     self.media = media
