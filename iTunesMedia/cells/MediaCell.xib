@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="cardColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RMc-d9-tgz" secondAttribute="trailing" constant="12" id="9Ns-9p-JhJ"/>
                             <constraint firstItem="RMc-d9-tgz" firstAttribute="height" secondItem="F69-7w-PKm" secondAttribute="height" multiplier="0.45" id="EKa-sP-90x"/>
@@ -114,9 +114,9 @@
         <namedColor name="accentColor">
             <color red="0.067000001668930054" green="0.45500001311302185" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="cardColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

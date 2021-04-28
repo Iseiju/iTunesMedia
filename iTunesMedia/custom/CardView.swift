@@ -19,9 +19,9 @@ class CardView: UIView {
   private func initRoundedShadowCorners() {
     layer.cornerRadius = 8.0
     layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-    layer.shadowColor = UIColor.lightGray.cgColor
+    layer.shadowColor = UIColor.black.cgColor
     layer.shadowRadius = 1.0
-    layer.shadowOpacity = 1
+    layer.shadowOpacity = 0.4
     layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
     layer.shouldRasterize = true
     layer.rasterizationScale = UIScreen.main.scale

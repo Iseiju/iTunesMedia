@@ -206,7 +206,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="cardColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="rNJ-EQ-muS" secondAttribute="trailing" constant="12" id="ACw-t0-Vrb"/>
                                                             <constraint firstItem="rNJ-EQ-muS" firstAttribute="centerY" secondItem="94z-Kk-Va1" secondAttribute="centerY" id="CNP-eV-kHa"/>
@@ -326,6 +326,9 @@
         <image name="ic-favorite" width="36" height="36"/>
         <namedColor name="accentColor">
             <color red="0.067000001668930054" green="0.45500001311302185" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cardColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
