@@ -170,9 +170,9 @@
 		E82DC8F225079BB400BBA6E4 /* viewmodels */ = {
 			isa = PBXGroup;
 			children = (
+				E81BEFA82507C60100703FEE /* DetailViewModel.swift */,
 				E82DC8F325079BC700BBA6E4 /* MainViewModel.swift */,
 				E82DC9002507A75C00BBA6E4 /* MediaCellViewModel.swift */,
-				E81BEFA82507C60100703FEE /* DetailViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -216,9 +216,9 @@
 		E858176525078FDF0041BCCE /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E81BEFA42507BFD000703FEE /* DetailController.swift */,
 				E8581767250791D40041BCCE /* LandingController.swift */,
 				E858176B250793E80041BCCE /* MainController.swift */,
-				E81BEFA42507BFD000703FEE /* DetailController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 		E858176625078FEC0041BCCE /* coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				E8581769250793790041BCCE /* MainCoordinator.swift */,
 				E81BEFA62507C13300703FEE /* DetailCoordinator.swift */,
+				E8581769250793790041BCCE /* MainCoordinator.swift */,
 			);
 			path = coordinators;
 			sourceTree = "<group>";

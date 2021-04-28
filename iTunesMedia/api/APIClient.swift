@@ -9,14 +9,7 @@
 import Alamofire
 import Foundation
 
-private protocol APIRequestTypes {
-  
-  func get<T: Codable>(url: String,
-                       model: T.Type,
-                       completion: @escaping (_ response: DataResponse<T, AFError>) -> Void)
-}
-
-class APIClient: APIRequestTypes {
+class APIClient {
   
   static var shared: APIClient = { return APIClient() }()
   

@@ -17,7 +17,9 @@ class MainViewModel {
   
   private let disposeBag = DisposeBag()
   
-  private let listOfMedia = BehaviorRelay<[Media]>(value: [])
+  private var listOfMedia: [Media] = []
+  
+  private let mediaRelay = BehaviorRelay<[Media]>(value: [])
   
   func getMedia(completion: @escaping (_ isSuccess: Bool, _ errorOrNil: NSError?) -> Void) {
     let url = "https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all"
@@ -31,7 +33,9 @@ class MainViewModel {
           self.realm.add(listOfMedia)
         }
         
-        self.listOfMedia.accept(listOfMedia)
+        self.listOfMedia = listOfMedia
+        self.mediaRelay.accept(listOfMedia)
+        
         completion(true, nil)
         
       case .failure(let error as NSError):
@@ -46,17 +50,32 @@ class MainViewModel {
             listOfMedia.append(items)
           }
           
-          self.listOfMedia.accept(listOfMedia)
+          self.listOfMedia = listOfMedia
+          self.mediaRelay.accept(listOfMedia)
+          
           completion(true, nil)
         }
       }
     })
   }
   
+  func filterMedia(query: String) {
+    if query.isEmpty {
+      mediaRelay.accept(listOfMedia)
+    } else {
+      let filtered = self.listOfMedia.filter {
+        ($0.title?.lowercased().contains(query.lowercased()) ?? false) ||
+        ($0.collectionTitle?.lowercased().contains(query.lowercased()) ?? false)
+      }
+
+      mediaRelay.accept(filtered)
+    }
+  }
+  
   func cellViewModels() -> BehaviorRelay<[MediaCellViewModel]> {
     let cellViewModels = BehaviorRelay<[MediaCellViewModel]>(value: [])
     
-    listOfMedia.subscribe(onNext: { media in
+    mediaRelay.subscribe(onNext: { media in
       cellViewModels.accept(media.map { return MediaCellViewModel(media: $0) })
     }).disposed(by: disposeBag)
     

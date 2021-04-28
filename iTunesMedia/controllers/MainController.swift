@@ -22,7 +22,9 @@ class MainController: UIViewController {
   
   var viewModel: MainViewModel?
   
-  let disposeBag = DisposeBag()
+  private var searchController: UISearchController?
+  
+  private let disposeBag = DisposeBag()
 
   @IBOutlet weak var tableView: UITableView!
   
@@ -57,6 +59,13 @@ class MainController: UIViewController {
       .navigationBar
       .titleTextAttributes = [NSAttributedString.Key.foregroundColor: accentColor]
     
+    searchController = UISearchController(searchResultsController: nil)
+    searchController?.searchResultsUpdater = self
+    searchController?.obscuresBackgroundDuringPresentation = false
+    searchController?.searchBar.placeholder = "Search Media"
+    navigationItem.searchController = searchController
+    definesPresentationContext = true
+    
     tableView.register(R.nib.mediaCell)
     
     tableView.delegate = self
@@ -85,12 +94,24 @@ class MainController: UIViewController {
                  cell.initCell(cellViewModel)
     }.disposed(by: disposeBag)
     
+    searchController?
+      .searchBar
+      .rx
+      .text
+      .orEmpty
+      .distinctUntilChanged()
+      .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+      .subscribe(onNext: { [weak self] query in
+        self?.viewModel?.filterMedia(query: query)
+      }).disposed(by: disposeBag)
+
     tableView
       .rx
       .itemSelected
       .subscribe(onNext: { [weak self] indexPath in
         guard let s = self,
-              let cellViewModel = s.viewModel?.cellViewModels().value[indexPath.row]
+              let cell = s.tableView.cellForRow(at: indexPath) as? MediaCell,
+              let cellViewModel = cell.cellViewModel
         else { return }
         
         s.delegate?.didTapMedia(forCellViewModel: cellViewModel, controller: s)
@@ -126,4 +147,9 @@ extension MainController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableView.automaticDimension
   }
+}
+
+extension MainController: UISearchResultsUpdating {
+  
+  func updateSearchResults(for searchController: UISearchController) { }
 }
