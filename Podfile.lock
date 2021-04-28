@@ -3,42 +3,6 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
-  - MaterialComponents/AnimationTiming (111.0.0)
-  - MaterialComponents/Availability (111.0.0)
-  - MaterialComponents/Cards (111.0.0):
-    - MaterialComponents/Elevation
-    - MaterialComponents/Ink
-    - MaterialComponents/private/Icons/ic_check_circle
-    - MaterialComponents/private/Math
-    - MaterialComponents/Ripple
-    - MaterialComponents/ShadowLayer
-    - MaterialComponents/Shapes
-  - MaterialComponents/Elevation (111.0.0):
-    - MaterialComponents/Availability
-    - MaterialComponents/private/Color
-    - MaterialComponents/private/Math
-  - MaterialComponents/Ink (111.0.0):
-    - MaterialComponents/Availability
-    - MaterialComponents/private/Color
-    - MaterialComponents/private/Math
-  - MaterialComponents/private/Color (111.0.0):
-    - MaterialComponents/Availability
-  - MaterialComponents/private/Icons/Base (111.0.0)
-  - MaterialComponents/private/Icons/ic_check_circle (111.0.0):
-    - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Math (111.0.0)
-  - MaterialComponents/Ripple (111.0.0):
-    - MaterialComponents/AnimationTiming
-    - MaterialComponents/Availability
-    - MaterialComponents/private/Color
-    - MaterialComponents/private/Math
-  - MaterialComponents/ShadowElevations (111.0.0)
-  - MaterialComponents/ShadowLayer (111.0.0):
-    - MaterialComponents/ShadowElevations
-  - MaterialComponents/Shapes (111.0.0):
-    - MaterialComponents/private/Color
-    - MaterialComponents/private/Math
-    - MaterialComponents/ShadowLayer
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
@@ -53,23 +17,19 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - StatefulTableView (0.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2.2)
   - Kingfisher (~> 5.14.1)
-  - MaterialComponents/Cards (~> 111.0.0)
   - R.swift (~> 5.2.2)
   - RealmSwift (~> 5.3.6)
   - RxCocoa (~> 5.1.1)
   - RxSwift (~> 5.1.1)
-  - StatefulTableView (from `https://github.com/Iseiju/StatefulTableView.git`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
-    - MaterialComponents
     - R.swift
     - R.swift.Library
     - Realm
@@ -78,19 +38,9 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
 
-EXTERNAL SOURCES:
-  StatefulTableView:
-    :git: https://github.com/Iseiju/StatefulTableView.git
-
-CHECKOUT OPTIONS:
-  StatefulTableView:
-    :commit: 944d6f03dac96e77148245a5b5775aca6e89f6f9
-    :git: https://github.com/Iseiju/StatefulTableView.git
-
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  MaterialComponents: 533042da998b97ad13a6f544268f8026e8161cc5
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   Realm: cd400dd7e5b5bb5c8ae9842eecd73792369e6ec0
@@ -98,8 +48,7 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  StatefulTableView: e9951caafc30a574978cd6bf9a2c4e55707fa6b3
 
-PODFILE CHECKSUM: 6c14470b553d3bc531f9599d66e6299268ae1ca2
+PODFILE CHECKSUM: 4d1aacae3594c4aecd350006cf8fbbada8050824
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

@@ -20,7 +20,7 @@ class MainViewModel {
   
   private let listOfMedia = BehaviorRelay<[Media]>(value: [])
   
-  func getMedia(completion: @escaping (_ isEmpty: Bool, _ errorOrNil: NSError?) -> Void) {
+  func getMedia(completion: @escaping (_ isSuccess: Bool, _ errorOrNil: NSError?) -> Void) {
     let url = "https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all"
     
     AF.request(url, method: .get).responseDecodable(of: PagedResponse.self) { response in
@@ -34,13 +34,13 @@ class MainViewModel {
         }
         
         self.listOfMedia.accept(listOfMedia)
-        completion(pagedResponse.results.isEmpty, nil)
+        completion(true, nil)
         
       case .failure(let error as NSError):
         let realmItems = self.realm.objects(Media.self)
         
         if realmItems.isEmpty {
-          completion(true, error)
+          completion(false, error)
         } else {
           var listOfMedia: [Media] = []
           
@@ -49,7 +49,7 @@ class MainViewModel {
           }
           
           self.listOfMedia.accept(listOfMedia)
-          completion(listOfMedia.isEmpty, nil)
+          completion(true, nil)
         }
       }
     }

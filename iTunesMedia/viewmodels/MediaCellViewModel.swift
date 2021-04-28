@@ -27,7 +27,10 @@ class MediaCellViewModel {
     return media?.price != nil ? mainPrice : collectionPrice
   }
   
-  var description: String { return media?.longDescription ?? "No description available." }
+  var description: String {
+    return (media?.longDescription != nil ?
+      media?.longDescription : media?.secondaryDescription?.htmlToString()) ??  "No description available"
+  }
   
   init(media: Media) {
     self.media = media

@@ -8,7 +8,6 @@
 
 import RxCocoa
 import RxSwift
-import StatefulTableView
 import UIKit
 
 protocol MainControllerDelegate {
@@ -25,14 +24,24 @@ class MainController: UIViewController {
   
   let disposeBag = DisposeBag()
 
-  @IBOutlet weak var tableView: StatefulTableView!
+  @IBOutlet weak var tableView: UITableView!
+  
+  @IBOutlet weak var activityIndicatorView: UIView!
+  
+  @IBOutlet weak var errorStackView: UIStackView!
+  
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var messageLabel: UILabel!
+  
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     initViews()
-    initTableView()
     initObservables()
+    
+    getMedia()
   }
   
   private func initViews() {
@@ -47,25 +56,29 @@ class MainController: UIViewController {
     navigationController?
       .navigationBar
       .titleTextAttributes = [NSAttributedString.Key.foregroundColor: accentColor]
-  }
-  
-  private func initTableView() {
-    tableView.separatorStyle = .none
-    tableView.innerTable.register(R.nib.mediaCell)
+    
+    tableView.register(R.nib.mediaCell)
     
     tableView.delegate = self
-    tableView.statefulDelegate = self
-    tableView.canLoadMore = false
-    tableView.canPullToRefresh = true
+  }
+  
+  private func getMedia() {
+    showActivityIndicator()
     
-    tableView.triggerInitialLoad()
+    viewModel?.getMedia(completion: { isSuccess, errorOrNil in
+      if isSuccess {
+        self.hideActivityIndicator()
+      } else {
+        self.showErrorMessage(title: "Something went wrong",
+                              message: errorOrNil?.localizedDescription ?? "")
+      }
+    })
   }
   
   private func initObservables() {
     viewModel?
       .cellViewModels()
       .bind(to: tableView
-        .innerTable
         .rx
         .items(cellIdentifier: R.nib.mediaCell.identifier,
                cellType: MediaCell.self)) { index, cellViewModel, cell in
@@ -73,17 +86,38 @@ class MainController: UIViewController {
     }.disposed(by: disposeBag)
     
     tableView
-      .innerTable
       .rx
       .itemSelected
       .subscribe(onNext: { [weak self] indexPath in
-        guard let s = self else { return }
-        guard let cellViewModel = s.viewModel?
-          .cellViewModels()
-          .value[indexPath.row]
+        guard let s = self,
+              let cellViewModel = s.viewModel?.cellViewModels().value[indexPath.row]
         else { return }
+        
         s.delegate?.didTapMedia(forCellViewModel: cellViewModel, controller: s)
       }).disposed(by: disposeBag)
+  }
+  
+  private func showActivityIndicator() {
+    activityIndicatorView.isHidden = false
+    errorStackView.isHidden = true
+    activityIndicator.startAnimating()
+  }
+  
+  private func hideActivityIndicator() {
+    activityIndicator.stopAnimating()
+    activityIndicatorView.isHidden = true
+  }
+  
+  private func showErrorMessage(title: String, message: String) {
+    activityIndicator.stopAnimating()
+    errorStackView.isHidden = false
+    
+    titleLabel.text = title
+    messageLabel.text = message
+  }
+  
+  @IBAction func didTapTryAgain(_ sender: Any) {
+    getMedia()
   }
 }
 
@@ -91,33 +125,5 @@ extension MainController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableView.automaticDimension
-  }
-}
-
-extension MainController: StatefulTableDelegate {
-  
-  func statefulTable(_ tableView: StatefulTableView,
-                     initialLoadCompletion completion: @escaping InitialLoadCompletion) {
-    statefulTable(tableView, pullToRefreshCompletion: completion)
-  }
-  
-  func statefulTable(_ tableView: StatefulTableView,
-                     pullToRefreshCompletion completion: @escaping InitialLoadCompletion) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-      self?.viewModel?.getMedia(completion: completion)
-    }
-  }
-  
-  func statefulTable(_ tableView: StatefulTableView,
-                     loadMoreCompletion completion: @escaping LoadMoreCompletion) {
-    completion(false, nil, false)
-  }
-  
-  func statefulTable(_ tableView: StatefulTableView,
-                     initialLoadWithError errorOrNil: NSError?,
-                     errorView: InitialLoadErrorView) -> UIView? {
-    errorView.labelText = errorOrNil?.localizedDescription
-    errorView.shouldShowRetryButton = true
-    return errorView
   }
 }
