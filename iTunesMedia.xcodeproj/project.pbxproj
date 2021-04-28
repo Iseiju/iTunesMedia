@@ -12,7 +12,6 @@
 		E61921BC2639989900C6154C /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61921BB2639989900C6154C /* FavoriteViewModel.swift */; };
 		E61921C22639A8F700C6154C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61921C12639A8F700C6154C /* R.generated.swift */; };
 		E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A666D2638CBDE00AC20EE /* CardView.swift */; };
-		E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C552638E3D500DFA74C /* String+Extensions.swift */; };
 		E63B2C5B2638E6A200DFA74C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C5A2638E6A200DFA74C /* APIClient.swift */; };
 		E6AD0E2F263971CF0003900B /* FavoriteListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2E263971CF0003900B /* FavoriteListController.swift */; };
 		E6AD0E33263971FD0003900B /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */; };
@@ -44,7 +43,6 @@
 		E61921BB2639989900C6154C /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		E61921C12639A8F700C6154C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E61A666D2638CBDE00AC20EE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		E63B2C552638E3D500DFA74C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E63B2C5A2638E6A200DFA74C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E6AD0E2E263971CF0003900B /* FavoriteListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListController.swift; sourceTree = "<group>"; };
 		E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
@@ -124,14 +122,6 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
-		E63B2C542638E3C800DFA74C /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E63B2C552638E3D500DFA74C /* String+Extensions.swift */,
-			);
-			path = extensions;
-			sourceTree = "<group>";
-		};
 		E63B2C592638E69700DFA74C /* api */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +158,6 @@
 				E858176525078FDF0041BCCE /* controllers */,
 				E858176625078FEC0041BCCE /* coordinators */,
 				E61A666C2638CBCA00AC20EE /* custom */,
-				E63B2C542638E3C800DFA74C /* extensions */,
 				E80ABE3A25077F1900640E3F /* Info.plist */,
 				E82DC8F525079C1B00BBA6E4 /* models */,
 				E831D25D25078BC4003114A9 /* storyboards */,
@@ -398,7 +387,6 @@
 				E610DBF8263A1A730011B1BB /* RealmClient.swift in Sources */,
 				E82DC9012507A75C00BBA6E4 /* MediaCellViewModel.swift in Sources */,
 				E6AD0E88263989630003900B /* Favorite.swift in Sources */,
-				E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */,
 				E81BEFA92507C60100703FEE /* DetailViewModel.swift in Sources */,
 				E81BEFA72507C13300703FEE /* DetailCoordinator.swift in Sources */,
 				E82DC8F925079D7C00BBA6E4 /* PagedResponse.swift in Sources */,
