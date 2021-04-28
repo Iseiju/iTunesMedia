@@ -23,10 +23,17 @@ class MainController: UIViewController {
   
   var viewModel: MainViewModel?
   
-  private lazy var favoritesButton = UIBarButtonItem(image: R.image.icStar(),
-                                                     style: .plain,
-                                                     target: self,
-                                                     action: #selector(didTapFavorites))
+  private var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(refreshMediaList), for: .valueChanged)
+    refreshControl.tintColor = R.color.accentColor()
+    return refreshControl
+  }()
+  
+  private var favoritesButton = UIBarButtonItem(image: R.image.icStar(),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(didTapFavorites))
   
   private var searchController: UISearchController?
   
@@ -61,22 +68,25 @@ class MainController: UIViewController {
       navigationController?.navigationBar.barTintColor = .white
     }
 
+    navigationController?.navigationBar.tintColor = R.color.accentColor()
     navigationController?
       .navigationBar
       .titleTextAttributes = [NSAttributedString.Key.foregroundColor: accentColor]
-    
-    navigationController?.navigationBar.tintColor = R.color.accentColor()
-    
-    navigationItem.rightBarButtonItem = favoritesButton
+
     favoritesButton.tintColor = R.color.accentColor()
     
     searchController = UISearchController(searchResultsController: nil)
     searchController?.searchResultsUpdater = self
     searchController?.obscuresBackgroundDuringPresentation = false
     searchController?.searchBar.placeholder = "Search Media"
-    navigationItem.searchController = searchController
     definesPresentationContext = true
     
+    navigationItem.hidesSearchBarWhenScrolling = false
+    navigationItem.searchController = searchController
+    navigationItem.rightBarButtonItem = favoritesButton
+    
+    tableView.refreshControl = refreshControl
+
     tableView.register(R.nib.mediaCell)
     
     tableView.delegate = self
@@ -85,14 +95,34 @@ class MainController: UIViewController {
   private func getMedia() {
     showActivityIndicator()
     
-    viewModel?.getMedia(completion: { isSuccess, errorOrNil in
+    viewModel?.getMedia(completion: { [weak self] isSuccess, errorOrNil in
       if isSuccess {
-        self.hideActivityIndicator()
+        self?.hideActivityIndicator()
       } else {
-        self.showErrorMessage(title: "Something went wrong",
-                              message: errorOrNil?.localizedDescription ?? "")
+        self?.showErrorMessage(title: "Something went wrong",
+                               message: errorOrNil?.localizedDescription ?? "")
       }
     })
+  }
+  
+  @objc private func refreshMediaList() {
+    refreshControl.beginRefreshing()
+    
+    viewModel?.getMedia(completion: { isSuccess, errorOrNil in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+        if isSuccess {
+          self?.refreshControl.endRefreshing()
+        } else {
+          self?.refreshControl.endRefreshing()
+          self?.showErrorMessage(title: "Something went wrong",
+                                 message: errorOrNil?.localizedDescription ?? "")
+        }
+      }
+    })
+  }
+  
+  @objc private func didTapFavorites() {
+    delegate?.didTapFavorites(controller: self)
   }
   
   private func initObservables() {
@@ -146,10 +176,6 @@ class MainController: UIViewController {
     
     titleLabel.text = title
     messageLabel.text = message
-  }
-  
-  @objc private func didTapFavorites() {
-    delegate?.didTapFavorites(controller: self)
   }
   
   @IBAction func didTapTryAgain(_ sender: Any) {
