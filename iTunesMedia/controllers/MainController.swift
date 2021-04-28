@@ -12,6 +12,7 @@ import UIKit
 
 protocol MainControllerDelegate {
   
+  func didTapFavorites(controller: MainController)
   func didTapMedia(forCellViewModel cellViewModel: MediaCellViewModel,
                    controller: MainController)
 }
@@ -21,6 +22,11 @@ class MainController: UIViewController {
   var delegate: MainControllerDelegate?
   
   var viewModel: MainViewModel?
+  
+  private lazy var favoritesButton = UIBarButtonItem(image: R.image.icStar(),
+                                                     style: .plain,
+                                                     target: self,
+                                                     action: #selector(didTapFavorites))
   
   private var searchController: UISearchController?
   
@@ -58,6 +64,11 @@ class MainController: UIViewController {
     navigationController?
       .navigationBar
       .titleTextAttributes = [NSAttributedString.Key.foregroundColor: accentColor]
+    
+    navigationController?.navigationBar.tintColor = R.color.accentColor()
+    
+    navigationItem.rightBarButtonItem = favoritesButton
+    favoritesButton.tintColor = R.color.accentColor()
     
     searchController = UISearchController(searchResultsController: nil)
     searchController?.searchResultsUpdater = self
@@ -135,6 +146,10 @@ class MainController: UIViewController {
     
     titleLabel.text = title
     messageLabel.text = message
+  }
+  
+  @objc private func didTapFavorites() {
+    delegate?.didTapFavorites(controller: self)
   }
   
   @IBAction func didTapTryAgain(_ sender: Any) {

@@ -33,6 +33,14 @@ class MainCoordinator {
 
 extension MainCoordinator: MainControllerDelegate {
   
+  func didTapFavorites(controller: MainController) {
+    guard let navController = controller.navigationController else { return }
+    let favoritesCoordinator = FavoritesCoordinator(navigationController: navController)
+    
+    favoritesCoordinator.pushFavorites()
+  }
+  
+  
   func didTapMedia(forCellViewModel cellViewModel: MediaCellViewModel,
                    controller: MainController) {
     guard let navController = controller.navigationController else { return }

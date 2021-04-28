@@ -11,6 +11,9 @@
 		E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A666D2638CBDE00AC20EE /* CardView.swift */; };
 		E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C552638E3D500DFA74C /* String+Extensions.swift */; };
 		E63B2C5B2638E6A200DFA74C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C5A2638E6A200DFA74C /* APIClient.swift */; };
+		E6AD0E2C26396E1C0003900B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2B26396E1C0003900B /* R.generated.swift */; };
+		E6AD0E2F263971CF0003900B /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2E263971CF0003900B /* FavoritesController.swift */; };
+		E6AD0E33263971FD0003900B /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */; };
 		E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80ABE2C25077F1800640E3F /* AppDelegate.swift */; };
 		E80ABE3425077F1800640E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3225077F1800640E3F /* Main.storyboard */; };
 		E80ABE3625077F1900640E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3525077F1900640E3F /* Assets.xcassets */; };
@@ -24,7 +27,6 @@
 		E82DC8FE2507A52200BBA6E4 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82DC8FC2507A52200BBA6E4 /* MediaCell.swift */; };
 		E82DC8FF2507A52200BBA6E4 /* MediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82DC8FD2507A52200BBA6E4 /* MediaCell.xib */; };
 		E82DC9012507A75C00BBA6E4 /* MediaCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82DC9002507A75C00BBA6E4 /* MediaCellViewModel.swift */; };
-		E831D248250784A7003114A9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831D247250784A7003114A9 /* R.generated.swift */; };
 		E831D25C25078B7F003114A9 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E831D25B25078B7F003114A9 /* Landing.storyboard */; };
 		E8581768250791D40041BCCE /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8581767250791D40041BCCE /* LandingController.swift */; };
 		E858176A250793790041BCCE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8581769250793790041BCCE /* MainCoordinator.swift */; };
@@ -38,6 +40,9 @@
 		E61A666D2638CBDE00AC20EE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E63B2C552638E3D500DFA74C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E63B2C5A2638E6A200DFA74C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E6AD0E2B26396E1C0003900B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E6AD0E2E263971CF0003900B /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		E80ABE2925077F1800640E3F /* iTunesMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80ABE2C25077F1800640E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E80ABE3325077F1800640E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,7 +58,6 @@
 		E82DC8FC2507A52200BBA6E4 /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		E82DC8FD2507A52200BBA6E4 /* MediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCell.xib; sourceTree = "<group>"; };
 		E82DC9002507A75C00BBA6E4 /* MediaCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCellViewModel.swift; sourceTree = "<group>"; };
-		E831D247250784A7003114A9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = iTunesMedia/utilities/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E831D25B25078B7F003114A9 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 		E8581767250791D40041BCCE /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
 		E8581769250793790041BCCE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 		E61A664D2638C3CF00AC20EE /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E831D247250784A7003114A9 /* R.generated.swift */,
+				E6AD0E2B26396E1C0003900B /* R.generated.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -217,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				E81BEFA42507BFD000703FEE /* DetailController.swift */,
+				E6AD0E2E263971CF0003900B /* FavoritesController.swift */,
 				E8581767250791D40041BCCE /* LandingController.swift */,
 				E858176B250793E80041BCCE /* MainController.swift */,
 			);
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E81BEFA62507C13300703FEE /* DetailCoordinator.swift */,
+				E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */,
 				E8581769250793790041BCCE /* MainCoordinator.swift */,
 			);
 			path = coordinators;
@@ -372,18 +378,20 @@
 				E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */,
 				E8581768250791D40041BCCE /* LandingController.swift in Sources */,
 				E858176A250793790041BCCE /* MainCoordinator.swift in Sources */,
+				E6AD0E2F263971CF0003900B /* FavoritesController.swift in Sources */,
 				E63B2C5B2638E6A200DFA74C /* APIClient.swift in Sources */,
 				E81BEFA52507BFD000703FEE /* DetailController.swift in Sources */,
 				E82DC8F725079C2300BBA6E4 /* Media.swift in Sources */,
 				E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */,
 				E82DC8FE2507A52200BBA6E4 /* MediaCell.swift in Sources */,
-				E831D248250784A7003114A9 /* R.generated.swift in Sources */,
 				E858176C250793E80041BCCE /* MainController.swift in Sources */,
 				E82DC9012507A75C00BBA6E4 /* MediaCellViewModel.swift in Sources */,
 				E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */,
+				E6AD0E2C26396E1C0003900B /* R.generated.swift in Sources */,
 				E81BEFA92507C60100703FEE /* DetailViewModel.swift in Sources */,
 				E81BEFA72507C13300703FEE /* DetailCoordinator.swift in Sources */,
 				E82DC8F925079D7C00BBA6E4 /* PagedResponse.swift in Sources */,
+				E6AD0E33263971FD0003900B /* FavoritesCoordinator.swift in Sources */,
 				E82DC8F425079BC700BBA6E4 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
