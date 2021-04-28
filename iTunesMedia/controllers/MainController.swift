@@ -32,7 +32,7 @@ class MainController: UIViewController {
   private lazy var favoritesButton = UIBarButtonItem(image: R.image.icStar(),
                                                      style: .plain,
                                                      target: self,
-                                                     action: #selector(didTapFavorites))
+                                                     action: #selector(didTapStar))
   
   private var searchController: UISearchController?
   
@@ -54,6 +54,10 @@ class MainController: UIViewController {
     
     initViews()
     initObservables()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     
     getMedia()
   }
@@ -114,7 +118,7 @@ class MainController: UIViewController {
     })
   }
   
-  @objc private func didTapFavorites() {
+  @objc private func didTapStar() {
     delegate?.pushFavorites(controller: self)
   }
   
@@ -191,7 +195,7 @@ extension MainController: UISearchResultsUpdating {
 
 extension MainController: MediaCellDelegate {
   
-  func addToFavorites(_ cellViewModel: MediaCellViewModel) {
+  func didTapFavorites(_ cellViewModel: MediaCellViewModel) {
     viewModel?.addToFavorites(cellViewModel)
   }
 }

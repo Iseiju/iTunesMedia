@@ -37,7 +37,7 @@ extension MainCoordinator: MainControllerDelegate {
     guard let navController = controller.navigationController else { return }
     let favoritesCoordinator = FavoritesCoordinator(navigationController: navController)
     
-    favoritesCoordinator.pushFavorites()
+    favoritesCoordinator.pushFavoriteList()
   }
   
   func pushDetailView(forCellViewModel cellViewModel: MediaCellViewModel,

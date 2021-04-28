@@ -13,6 +13,10 @@ import RealmSwift
   
   dynamic var id: Int = 0
   
+  override class func primaryKey() -> String? {
+    return "id"
+  }
+  
   static func queryAll() -> Results<Favorite> {
     let realm = try! Realm()
     return realm.objects(Favorite.self)
@@ -23,7 +27,7 @@ import RealmSwift
       let realm = try Realm()
       
       try realm.write {
-        realm.add(favorite)
+        realm.add(favorite, update: .modified)
       }
     } catch let error {
       print(error.localizedDescription)

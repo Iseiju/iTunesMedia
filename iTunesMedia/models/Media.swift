@@ -27,6 +27,10 @@ import RealmSwift
     case longDescription
   }
   
+  override class func primaryKey() -> String? {
+    return "id"
+  }
+  
   static func queryAll() -> Results<Media> {
     let realm = try! Realm()
     return realm.objects(Media.self)
@@ -37,7 +41,7 @@ import RealmSwift
       let realm = try Realm()
       
       try realm.write {
-        realm.add(media)
+        realm.add(media, update: .modified)
       }
     } catch let error {
       print(error.localizedDescription)

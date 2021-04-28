@@ -7,13 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 import RxCocoa
 import RxSwift
-import RealmSwift
 
 class MainViewModel {
-  
-  private let realm = try! Realm()
   
   private let disposeBag = DisposeBag()
   

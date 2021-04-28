@@ -18,8 +18,10 @@ class FavoritesCoordinator {
     self.navigationController = navigationController
   }
   
-  func pushFavorites() {
-    guard let favoritesController = R.storyboard.main.favoritesController() else { return }
+  func pushFavoriteList() {
+    guard let favoritesController = R.storyboard.main.favoriteListController() else { return }
+    
+    favoritesController.viewModel = FavoriteViewModel()
     
     navigationController?.pushViewController(favoritesController, animated: true)
   }

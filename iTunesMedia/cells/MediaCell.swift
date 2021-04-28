@@ -11,7 +11,7 @@ import UIKit
 
 protocol MediaCellDelegate {
   
-  func addToFavorites(_ cellViewModel: MediaCellViewModel)
+  func didTapFavorites(_ cellViewModel: MediaCellViewModel)
 }
 
 class MediaCell: UITableViewCell {
@@ -60,6 +60,6 @@ class MediaCell: UITableViewCell {
   
   @IBAction func didTapFavorite(_ sender: Any) {
     guard let cellViewModel = self.cellViewModel else { return }
-    delegate?.addToFavorites(cellViewModel)
+    delegate?.didTapFavorites(cellViewModel)
   }
 }

@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4D4D8421E5D960F52CE4F653 /* Pods_iTunesMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF4B0FA20D0A0F41F0CF1A /* Pods_iTunesMedia.framework */; };
+		E61921BC2639989900C6154C /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61921BB2639989900C6154C /* FavoriteViewModel.swift */; };
+		E61921C22639A8F700C6154C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61921C12639A8F700C6154C /* R.generated.swift */; };
 		E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A666D2638CBDE00AC20EE /* CardView.swift */; };
 		E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C552638E3D500DFA74C /* String+Extensions.swift */; };
 		E63B2C5B2638E6A200DFA74C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B2C5A2638E6A200DFA74C /* APIClient.swift */; };
-		E6AD0E2C26396E1C0003900B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2B26396E1C0003900B /* R.generated.swift */; };
-		E6AD0E2F263971CF0003900B /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2E263971CF0003900B /* FavoritesController.swift */; };
+		E6AD0E2F263971CF0003900B /* FavoriteListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2E263971CF0003900B /* FavoriteListController.swift */; };
 		E6AD0E33263971FD0003900B /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */; };
 		E6AD0E88263989630003900B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E87263989630003900B /* Favorite.swift */; };
 		E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80ABE2C25077F1800640E3F /* AppDelegate.swift */; };
@@ -38,11 +39,12 @@
 		12B18BFA37C2F617DFE2EA09 /* Pods-iTunesMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesMedia.release.xcconfig"; path = "Target Support Files/Pods-iTunesMedia/Pods-iTunesMedia.release.xcconfig"; sourceTree = "<group>"; };
 		48AF4B0FA20D0A0F41F0CF1A /* Pods_iTunesMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641F6714E337C7D47785A3BA /* Pods-iTunesMedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesMedia.debug.xcconfig"; path = "Target Support Files/Pods-iTunesMedia/Pods-iTunesMedia.debug.xcconfig"; sourceTree = "<group>"; };
+		E61921BB2639989900C6154C /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		E61921C12639A8F700C6154C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E61A666D2638CBDE00AC20EE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E63B2C552638E3D500DFA74C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E63B2C5A2638E6A200DFA74C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		E6AD0E2B26396E1C0003900B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		E6AD0E2E263971CF0003900B /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		E6AD0E2E263971CF0003900B /* FavoriteListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListController.swift; sourceTree = "<group>"; };
 		E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		E6AD0E87263989630003900B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		E80ABE2925077F1800640E3F /* iTunesMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +100,7 @@
 		E61A664D2638C3CF00AC20EE /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E6AD0E2B26396E1C0003900B /* R.generated.swift */,
+				E61921C12639A8F700C6154C /* R.generated.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				E81BEFA82507C60100703FEE /* DetailViewModel.swift */,
+				E61921BB2639989900C6154C /* FavoriteViewModel.swift */,
 				E82DC8F325079BC700BBA6E4 /* MainViewModel.swift */,
 				E82DC9002507A75C00BBA6E4 /* MediaCellViewModel.swift */,
 			);
@@ -224,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				E81BEFA42507BFD000703FEE /* DetailController.swift */,
-				E6AD0E2E263971CF0003900B /* FavoritesController.swift */,
+				E6AD0E2E263971CF0003900B /* FavoriteListController.swift */,
 				E8581767250791D40041BCCE /* LandingController.swift */,
 				E858176B250793E80041BCCE /* MainController.swift */,
 			);
@@ -381,21 +384,22 @@
 				E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */,
 				E8581768250791D40041BCCE /* LandingController.swift in Sources */,
 				E858176A250793790041BCCE /* MainCoordinator.swift in Sources */,
-				E6AD0E2F263971CF0003900B /* FavoritesController.swift in Sources */,
+				E6AD0E2F263971CF0003900B /* FavoriteListController.swift in Sources */,
 				E63B2C5B2638E6A200DFA74C /* APIClient.swift in Sources */,
 				E81BEFA52507BFD000703FEE /* DetailController.swift in Sources */,
 				E82DC8F725079C2300BBA6E4 /* Media.swift in Sources */,
+				E61921C22639A8F700C6154C /* R.generated.swift in Sources */,
 				E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */,
 				E82DC8FE2507A52200BBA6E4 /* MediaCell.swift in Sources */,
 				E858176C250793E80041BCCE /* MainController.swift in Sources */,
 				E82DC9012507A75C00BBA6E4 /* MediaCellViewModel.swift in Sources */,
 				E6AD0E88263989630003900B /* Favorite.swift in Sources */,
 				E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */,
-				E6AD0E2C26396E1C0003900B /* R.generated.swift in Sources */,
 				E81BEFA92507C60100703FEE /* DetailViewModel.swift in Sources */,
 				E81BEFA72507C13300703FEE /* DetailCoordinator.swift in Sources */,
 				E82DC8F925079D7C00BBA6E4 /* PagedResponse.swift in Sources */,
 				E6AD0E33263971FD0003900B /* FavoritesCoordinator.swift in Sources */,
+				E61921BC2639989900C6154C /* FavoriteViewModel.swift in Sources */,
 				E82DC8F425079BC700BBA6E4 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
