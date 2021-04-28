@@ -1,10 +1,14 @@
 # iTunesMedia
-An iOS master-detail app that shows a list of items obtained from an iTunes Search
+An iOS app that shows a list of Movies with a "Star" content, obtained from an iTunes Search.
+
+https://itunes.apple.com/search?term=star&country=au&media=movie
 
 # UI and Design
-For the UI and Design, I went with a standard table list in the Main screen. And another screen for the detailed view which shows the description of an item.
+For the UI and Design, I went with a standard table list in the Main screen, another screen for the detailed view which shows the description of an item, and a Favorites screen to show Movies that were marked as favorites from the Main screen.
 
-The app icons and launchscreen image have been sourced here (https://icon-library.com/icon/media-icon-png-23.html)
+The icons used have been sourced here: 
+https://icon-library.com/icon/media-icon-png-23.html,
+https://fonts.google.com/icons?selected=Material+Icons
 
 ### Dark Mode
 
@@ -46,6 +50,8 @@ For persistence, I went with Realm as my preferred persistence stack since it's 
 The app stores the response (`Media`) and also updates it for every successful network call (`func getMedia()`)
 The stored data will then be called and be used if the network call should fail.
 
-`Media` model conforms to both `Object` and `Codable` which is needed for Realm and coding/decoding respectively.
+A `Favorite` model has been included as well, to keep track of Movies that were marked as favorite via their respective `id`. Objects that will be added to the favorite list will be checked first if it's already existing in the persistence layer. If yes, then remove the object, if no, object will be added to the list.
 
-Please see `Model.swift` and `MainViewModel.swift` for reference.
+`Favorite` model conforms to Object for persistence use, while `Media` model conforms to both `Object` and `Codable` which is needed for Realm and coding/decoding respectively.
+
+Please see `Model.swift`, `Favorite.swift` and `MainViewModel.swift` for reference.
