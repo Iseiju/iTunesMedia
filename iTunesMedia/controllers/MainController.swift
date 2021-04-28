@@ -110,13 +110,7 @@ class MainController: UIViewController {
     
     viewModel?.getMedia(completion: { isSuccess, errorOrNil in
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
-        if isSuccess {
-          self?.refreshControl.endRefreshing()
-        } else {
-          self?.refreshControl.endRefreshing()
-          self?.showErrorMessage(title: "Something went wrong",
-                                 message: errorOrNil?.localizedDescription ?? "")
-        }
+        self?.refreshControl.endRefreshing()
       }
     })
   }

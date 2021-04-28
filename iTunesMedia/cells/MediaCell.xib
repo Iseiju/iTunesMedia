@@ -34,10 +34,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4ss-gB-RBL">
-                                <rect key="frame" x="84" y="18" width="260" height="68.5"/>
+                                <rect key="frame" x="84" y="18" width="208" height="68.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71V-DQ-9tb">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="19.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" name="accentColor"/>
                                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1V-eK-gPd">
-                                        <rect key="frame" x="0.0" y="23.5" width="260" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="23.5" width="208" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-Rm-DcN">
-                                        <rect key="frame" x="0.0" y="47" width="260" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="47" width="208" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
@@ -65,13 +65,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-d9-tgz">
+                                <rect key="frame" x="304" y="32" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RMc-d9-tgz" secondAttribute="height" multiplier="1:1" id="yTG-iQ-F1F"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" image="ic-favorite"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RMc-d9-tgz" secondAttribute="trailing" constant="12" id="9Ns-9p-JhJ"/>
+                            <constraint firstItem="RMc-d9-tgz" firstAttribute="height" secondItem="F69-7w-PKm" secondAttribute="height" multiplier="0.5" id="EKa-sP-90x"/>
                             <constraint firstAttribute="bottom" secondItem="F69-7w-PKm" secondAttribute="bottom" constant="12" id="PqC-iW-iMp"/>
+                            <constraint firstItem="RMc-d9-tgz" firstAttribute="leading" secondItem="4ss-gB-RBL" secondAttribute="trailing" constant="12" id="ahh-pe-OK7"/>
                             <constraint firstItem="4ss-gB-RBL" firstAttribute="centerY" secondItem="kek-cs-DUY" secondAttribute="centerY" id="bGX-AO-iao"/>
-                            <constraint firstAttribute="trailing" secondItem="4ss-gB-RBL" secondAttribute="trailing" constant="12" id="lPi-2y-PEt"/>
                             <constraint firstItem="F69-7w-PKm" firstAttribute="top" secondItem="kek-cs-DUY" secondAttribute="top" constant="12" id="nAf-Xu-dg0"/>
+                            <constraint firstItem="RMc-d9-tgz" firstAttribute="centerY" secondItem="kek-cs-DUY" secondAttribute="centerY" id="rau-gM-ub2"/>
                             <constraint firstItem="F69-7w-PKm" firstAttribute="leading" secondItem="kek-cs-DUY" secondAttribute="leading" constant="12" id="sEW-Cg-CLj"/>
                             <constraint firstItem="4ss-gB-RBL" firstAttribute="leading" secondItem="F69-7w-PKm" secondAttribute="trailing" constant="12" id="vzc-Xq-Cqo"/>
                         </constraints>
@@ -95,6 +106,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic-favorite" width="36" height="36"/>
         <namedColor name="accentColor">
             <color red="0.067000001668930054" green="0.45500001311302185" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
