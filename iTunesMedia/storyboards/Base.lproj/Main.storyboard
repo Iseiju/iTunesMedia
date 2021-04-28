@@ -259,7 +259,7 @@
                             <constraint firstItem="fhU-eF-cpP" firstAttribute="height" secondItem="YGH-xC-v0D" secondAttribute="height" multiplier="0.45" id="VWa-vI-zaw"/>
                             <constraint firstItem="M34-Td-o1Y" firstAttribute="leading" secondItem="YGH-xC-v0D" secondAttribute="leading" id="WY9-0H-RND"/>
                             <constraint firstItem="M34-Td-o1Y" firstAttribute="top" secondItem="YGH-xC-v0D" secondAttribute="top" id="X43-DU-m3g"/>
-                            <constraint firstAttribute="bottom" secondItem="M34-Td-o1Y" secondAttribute="bottom" id="c12-uw-IVS"/>
+                            <constraint firstItem="YGH-xC-v0D" firstAttribute="bottom" secondItem="M34-Td-o1Y" secondAttribute="bottom" id="c12-uw-IVS"/>
                             <constraint firstItem="YGH-xC-v0D" firstAttribute="trailing" secondItem="M34-Td-o1Y" secondAttribute="trailing" id="map-pg-y06"/>
                         </constraints>
                     </view>

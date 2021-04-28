@@ -22,7 +22,7 @@ class MainViewModel {
   private let mediaRelay = BehaviorRelay<[Media]>(value: [])
   
   func getMedia(completion: @escaping (_ isSuccess: Bool, _ errorOrNil: NSError?) -> Void) {
-    let url = "https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all"
+    let url = "https://itunes.apple.com/search?term=star&country=au&media=movie"
     
     APIClient.shared.get(url: url, model: PagedResponse.self, completion: { response in
       switch response.result {
@@ -35,7 +35,7 @@ class MainViewModel {
         
         self.listOfMedia = listOfMedia
         self.mediaRelay.accept(listOfMedia)
-        
+
         completion(true, nil)
         
       case .failure(let error as NSError):
@@ -63,10 +63,7 @@ class MainViewModel {
     if query.isEmpty {
       mediaRelay.accept(listOfMedia)
     } else {
-      let filtered = self.listOfMedia.filter {
-        ($0.title?.lowercased().contains(query.lowercased()) ?? false) ||
-        ($0.collectionTitle?.lowercased().contains(query.lowercased()) ?? false)
-      }
+      let filtered = self.listOfMedia.filter { $0.title.lowercased().contains(query.lowercased()) }
 
       mediaRelay.accept(filtered)
     }

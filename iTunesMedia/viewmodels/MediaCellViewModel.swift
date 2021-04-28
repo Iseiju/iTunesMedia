@@ -11,24 +11,10 @@ import Foundation
 class MediaCellViewModel {
   
   var artwork: String { return media?.artwork ?? "" }
-  
-  var title: String {
-    return (media?.title != nil ? media?.title : media?.collectionTitle) ?? "No title available"
-  }
-  
+  var title: String { return media?.title ?? "No title available" }
   var genre: String { return media?.genre ?? "" }
-  
-  var price: String {
-    let mainPrice = "$\(String(media?.price ?? 0.0))"
-    let collectionPrice = "$\(String(media?.collectionPrice ?? 00))"
-    
-    return media?.price != nil ? mainPrice : collectionPrice
-  }
-  
-  var description: String {
-    return (media?.longDescription != nil ?
-      media?.longDescription : media?.secondaryDescription?.htmlToString()) ??  "No description available"
-  }
+  var price: String { return "$\(media?.price ?? 0.0)" }
+  var description: String { return media?.longDescription ?? "No description available" }
   
   private var media: Media?
   

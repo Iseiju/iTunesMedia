@@ -23,17 +23,17 @@ class MainController: UIViewController {
   
   var viewModel: MainViewModel?
   
-  private var refreshControl: UIRefreshControl = {
+  private lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(refreshMediaList), for: .valueChanged)
     refreshControl.tintColor = R.color.accentColor()
     return refreshControl
   }()
   
-  private var favoritesButton = UIBarButtonItem(image: R.image.icStar(),
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(didTapFavorites))
+  private lazy var favoritesButton = UIBarButtonItem(image: R.image.icStar(),
+                                                     style: .plain,
+                                                     target: self,
+                                                     action: #selector(didTapFavorites))
   
   private var searchController: UISearchController?
   

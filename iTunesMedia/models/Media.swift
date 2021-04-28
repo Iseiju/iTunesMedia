@@ -11,24 +11,19 @@ import RealmSwift
 
 @objcMembers class Media: Object, Codable {
 
-  dynamic var title: String?
-  dynamic var collectionTitle: String?
-  dynamic var artwork: String = ""
-  dynamic var genre: String = ""
-  dynamic var longDescription: String?
-  dynamic var secondaryDescription: String?
+  dynamic var id: Int
+  dynamic var title: String
+  dynamic var artwork: String
+  dynamic var genre: String
+  dynamic var price: Double
+  dynamic var longDescription: String
   
-  dynamic var price: Double?
-  dynamic var collectionPrice: Double?
-
   private enum CodingKeys: String, CodingKey {
+    case id = "trackId"
     case title = "trackName"
-    case collectionTitle = "collectionName"
     case artwork = "artworkUrl100"
     case genre = "primaryGenreName"
-    case longDescription
-    case secondaryDescription = "description"
     case price = "trackPrice"
-    case collectionPrice
+    case longDescription
   }
 }
