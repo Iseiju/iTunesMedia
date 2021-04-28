@@ -18,8 +18,8 @@ class FavoriteViewModel {
   private let mediaRelay = BehaviorRelay<[Media]>(value: [])
   
   func getFavorites() {
-    let mediaList = Media.queryAll(),
-        favorites = Favorite.queryAll()
+    let mediaList = RealmClient.shared.queryAll(Media.self)
+    let favorites = RealmClient.shared.queryAll(Favorite.self)
     
     var filteredMedia: [Media] = []
     
@@ -32,9 +32,12 @@ class FavoriteViewModel {
   
   func removeFromFavorites(_ cellViewModel: MediaCellViewModel) {
     let id = cellViewModel.id
-    let favoriteToRemove = Favorite.queryAll().filter("id = %@", id)
-    
-    Favorite.delete(favoriteToRemove)
+    let favoriteToRemove = RealmClient
+      .shared
+      .queryAll(Favorite.self).filter("id = %@", id)
+      .first ?? Favorite()
+
+    RealmClient.shared.delete(favoriteToRemove)
     
     getFavorites()
   }

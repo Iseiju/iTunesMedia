@@ -27,18 +27,18 @@ class DetailViewModel {
   }
   
   func addToFavorites(completion: @escaping (_ wasAdded: Bool) -> Void) {
-    let realmFavorites = Favorite.queryAll()
+    let realmFavorites = RealmClient.shared.queryAll(Favorite.self)
     
     if realmFavorites.contains(where: { $0.id == id }) {
-      let removeFavorite = realmFavorites.filter("id = %@", id)
+      let removeFavorite = realmFavorites.filter("id = %@", id).first ?? Favorite()
       
-      Favorite.delete(removeFavorite)
+      RealmClient.shared.delete(removeFavorite)
       completion(false)
     } else {
       let favorite = Favorite()
       favorite.id = id
 
-      Favorite.save(favorite)
+      RealmClient.shared.save(favorite)
       completion(true)
     }
   }

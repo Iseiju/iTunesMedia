@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D4D8421E5D960F52CE4F653 /* Pods_iTunesMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AF4B0FA20D0A0F41F0CF1A /* Pods_iTunesMedia.framework */; };
+		E610DBF8263A1A730011B1BB /* RealmClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E610DBF7263A1A730011B1BB /* RealmClient.swift */; };
 		E61921BC2639989900C6154C /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61921BB2639989900C6154C /* FavoriteViewModel.swift */; };
 		E61921C22639A8F700C6154C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61921C12639A8F700C6154C /* R.generated.swift */; };
 		E61A666E2638CBDE00AC20EE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A666D2638CBDE00AC20EE /* CardView.swift */; };
@@ -39,6 +40,7 @@
 		12B18BFA37C2F617DFE2EA09 /* Pods-iTunesMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesMedia.release.xcconfig"; path = "Target Support Files/Pods-iTunesMedia/Pods-iTunesMedia.release.xcconfig"; sourceTree = "<group>"; };
 		48AF4B0FA20D0A0F41F0CF1A /* Pods_iTunesMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		641F6714E337C7D47785A3BA /* Pods-iTunesMedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesMedia.debug.xcconfig"; path = "Target Support Files/Pods-iTunesMedia/Pods-iTunesMedia.debug.xcconfig"; sourceTree = "<group>"; };
+		E610DBF7263A1A730011B1BB /* RealmClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmClient.swift; sourceTree = "<group>"; };
 		E61921BB2639989900C6154C /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		E61921C12639A8F700C6154C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E61A666D2638CBDE00AC20EE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				E61921C12639A8F700C6154C /* R.generated.swift */,
+				E610DBF7263A1A730011B1BB /* RealmClient.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */,
 				E82DC8FE2507A52200BBA6E4 /* MediaCell.swift in Sources */,
 				E858176C250793E80041BCCE /* MainController.swift in Sources */,
+				E610DBF8263A1A730011B1BB /* RealmClient.swift in Sources */,
 				E82DC9012507A75C00BBA6E4 /* MediaCellViewModel.swift in Sources */,
 				E6AD0E88263989630003900B /* Favorite.swift in Sources */,
 				E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */,

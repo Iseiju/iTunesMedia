@@ -27,7 +27,7 @@ class MainViewModel {
       case .success(let pagedResponse):
         let listOfMedia = pagedResponse.results
         
-        Media.save(listOfMedia)
+        RealmClient.shared.saveAll(listOfMedia)
         
         self.listOfMedia = listOfMedia
         self.mediaRelay.accept(listOfMedia)
@@ -35,7 +35,7 @@ class MainViewModel {
         completion(true, nil)
         
       case .failure(let error as NSError):
-        let realmItems = Media.queryAll()
+        let realmItems = RealmClient.shared.queryAll(Media.self)
         
         if realmItems.isEmpty {
           completion(false, error)
@@ -67,16 +67,16 @@ class MainViewModel {
   
   func addToFavorites(_ cellViewModel: MediaCellViewModel) {
     let id = cellViewModel.id
-    let realmFavorites = Favorite.queryAll()
+    let realmFavorites = RealmClient.shared.queryAll(Favorite.self)
     
     if realmFavorites.contains(where: { $0.id == id }) {
-      let removeFavorite = realmFavorites.filter("id = %@", id)
-      Favorite.delete(removeFavorite)
+      let removeFavorite = realmFavorites.filter("id = %@", id).first ?? Favorite()
+      RealmClient.shared.delete(removeFavorite)
     } else {
       let favorite = Favorite()
       favorite.id = id
 
-      Favorite.save(favorite)
+      RealmClient.shared.save(favorite)
     }
     
     mediaRelay.accept(self.mediaRelay.value)
@@ -87,7 +87,7 @@ class MainViewModel {
     
     mediaRelay.subscribe(onNext: { media in
       cellViewModels.accept(media.map { media in
-        let isFavorite = Favorite.queryAll().contains(where: { $0.id == media.id })
+        let isFavorite = RealmClient.shared.queryAll(Favorite.self).contains(where: { $0.id == media.id })
         return MediaCellViewModel(media, isFavorite)
       })
     }).disposed(by: disposeBag)
