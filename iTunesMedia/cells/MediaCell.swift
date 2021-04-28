@@ -9,7 +9,14 @@
 import Kingfisher
 import UIKit
 
+protocol MediaCellDelegate {
+  
+  func addToFavorites(_ cellViewModel: MediaCellViewModel)
+}
+
 class MediaCell: UITableViewCell {
+  
+  var delegate: MediaCellDelegate?
   
   var cellViewModel: MediaCellViewModel?
 
@@ -18,6 +25,8 @@ class MediaCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var genreLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
+  
+  @IBOutlet weak var favoriteButton: UIButton!
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -41,5 +50,16 @@ class MediaCell: UITableViewCell {
     self.titleLabel.text = self.cellViewModel?.title
     self.genreLabel.text = self.cellViewModel?.genre
     self.priceLabel.text = self.cellViewModel?.price
+    
+    if cellViewModel.isFavorite {
+      favoriteButton.setImage(R.image.icFavoriteFill(), for: .normal)
+    } else {
+      favoriteButton.setImage(R.image.icFavorite(), for: .normal)
+    }
+  }
+  
+  @IBAction func didTapFavorite(_ sender: Any) {
+    guard let cellViewModel = self.cellViewModel else { return }
+    delegate?.addToFavorites(cellViewModel)
   }
 }

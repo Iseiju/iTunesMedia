@@ -72,6 +72,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" image="ic-favorite"/>
+                                <connections>
+                                    <action selector="didTapFavorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pVB-Im-5Ia"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -98,6 +101,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="artworkImageView" destination="F69-7w-PKm" id="Hwd-hR-U4Q"/>
+                <outlet property="favoriteButton" destination="RMc-d9-tgz" id="PiW-VL-770"/>
                 <outlet property="genreLabel" destination="V1V-eK-gPd" id="boE-PI-h6b"/>
                 <outlet property="priceLabel" destination="pgQ-Rm-DcN" id="QiE-5W-Joz"/>
                 <outlet property="titleLabel" destination="71V-DQ-9tb" id="CrW-tU-h2R"/>

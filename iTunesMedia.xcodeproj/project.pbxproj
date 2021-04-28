@@ -14,6 +14,7 @@
 		E6AD0E2C26396E1C0003900B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2B26396E1C0003900B /* R.generated.swift */; };
 		E6AD0E2F263971CF0003900B /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E2E263971CF0003900B /* FavoritesController.swift */; };
 		E6AD0E33263971FD0003900B /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */; };
+		E6AD0E88263989630003900B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD0E87263989630003900B /* Favorite.swift */; };
 		E80ABE2D25077F1800640E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80ABE2C25077F1800640E3F /* AppDelegate.swift */; };
 		E80ABE3425077F1800640E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3225077F1800640E3F /* Main.storyboard */; };
 		E80ABE3625077F1900640E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80ABE3525077F1900640E3F /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		E6AD0E2B26396E1C0003900B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E6AD0E2E263971CF0003900B /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		E6AD0E32263971FD0003900B /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		E6AD0E87263989630003900B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		E80ABE2925077F1800640E3F /* iTunesMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80ABE2C25077F1800640E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E80ABE3325077F1800640E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				E82DC8FA2507A0CE00BBA6E4 /* http */,
+				E6AD0E87263989630003900B /* Favorite.swift */,
 				E82DC8F625079C2300BBA6E4 /* Media.swift */,
 			);
 			path = models;
@@ -386,6 +389,7 @@
 				E82DC8FE2507A52200BBA6E4 /* MediaCell.swift in Sources */,
 				E858176C250793E80041BCCE /* MainController.swift in Sources */,
 				E82DC9012507A75C00BBA6E4 /* MediaCellViewModel.swift in Sources */,
+				E6AD0E88263989630003900B /* Favorite.swift in Sources */,
 				E63B2C562638E3D500DFA74C /* String+Extensions.swift in Sources */,
 				E6AD0E2C26396E1C0003900B /* R.generated.swift in Sources */,
 				E81BEFA92507C60100703FEE /* DetailViewModel.swift in Sources */,

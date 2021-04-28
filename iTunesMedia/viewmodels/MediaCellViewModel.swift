@@ -10,6 +10,10 @@ import Foundation
 
 class MediaCellViewModel {
   
+  var id: Int { return media?.id ?? 0 }
+    
+  var isFavorite: Bool = false
+  
   var artwork: String { return media?.artwork ?? "" }
   var title: String { return media?.title ?? "No title available" }
   var genre: String { return media?.genre ?? "" }
@@ -18,7 +22,8 @@ class MediaCellViewModel {
   
   private var media: Media?
   
-  init(media: Media) {
+  init(_ media: Media, _ isFavorite: Bool) {
     self.media = media
+    self.isFavorite = isFavorite
   }
 }

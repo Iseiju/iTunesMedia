@@ -26,4 +26,21 @@ import RealmSwift
     case price = "trackPrice"
     case longDescription
   }
+  
+  static func queryAll() -> Results<Media> {
+    let realm = try! Realm()
+    return realm.objects(Media.self)
+  }
+  
+  static func save(_ media: [Media]) {
+    do {
+      let realm = try Realm()
+      
+      try realm.write {
+        realm.add(media)
+      }
+    } catch let error {
+      print(error.localizedDescription)
+    }
+  }
 }

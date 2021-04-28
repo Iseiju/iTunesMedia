@@ -12,9 +12,8 @@ import UIKit
 
 protocol MainControllerDelegate {
   
-  func didTapFavorites(controller: MainController)
-  func didTapMedia(forCellViewModel cellViewModel: MediaCellViewModel,
-                   controller: MainController)
+  func pushFavorites(controller: MainController)
+  func pushDetailView(forCellViewModel cellViewModel: MediaCellViewModel, controller: MainController)
 }
 
 class MainController: UIViewController {
@@ -116,7 +115,7 @@ class MainController: UIViewController {
   }
   
   @objc private func didTapFavorites() {
-    delegate?.didTapFavorites(controller: self)
+    delegate?.pushFavorites(controller: self)
   }
   
   private func initObservables() {
@@ -126,7 +125,8 @@ class MainController: UIViewController {
         .rx
         .items(cellIdentifier: R.nib.mediaCell.identifier,
                cellType: MediaCell.self)) { index, cellViewModel, cell in
-                 cell.initCell(cellViewModel)
+        cell.initCell(cellViewModel)
+        cell.delegate = self
     }.disposed(by: disposeBag)
     
     searchController?
@@ -149,7 +149,7 @@ class MainController: UIViewController {
               let cellViewModel = cell.cellViewModel
         else { return }
         
-        s.delegate?.didTapMedia(forCellViewModel: cellViewModel, controller: s)
+        s.delegate?.pushDetailView(forCellViewModel: cellViewModel, controller: s)
       }).disposed(by: disposeBag)
   }
   
@@ -187,4 +187,11 @@ extension MainController: UITableViewDelegate {
 extension MainController: UISearchResultsUpdating {
   
   func updateSearchResults(for searchController: UISearchController) { }
+}
+
+extension MainController: MediaCellDelegate {
+  
+  func addToFavorites(_ cellViewModel: MediaCellViewModel) {
+    viewModel?.addToFavorites(cellViewModel)
+  }
 }
