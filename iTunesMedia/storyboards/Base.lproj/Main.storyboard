@@ -163,10 +163,10 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YEX-UO-CUf">
-                                                                <rect key="frame" x="96" y="28" width="243" height="68.5"/>
+                                                                <rect key="frame" x="96" y="28" width="196" height="68.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozr-Ji-nGk">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="243" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="196" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                         <color key="textColor" name="accentColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -175,7 +175,7 @@
                                                                         </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-xq-g9d">
-                                                                        <rect key="frame" x="0.0" y="23.5" width="243" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="23.5" width="196" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -184,7 +184,7 @@
                                                                         </variation>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ff-Yq-Uyt">
-                                                                        <rect key="frame" x="0.0" y="47" width="243" height="21.5"/>
+                                                                        <rect key="frame" x="0.0" y="47" width="196" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -194,15 +194,29 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNJ-EQ-muS">
+                                                                <rect key="frame" x="304" y="44.5" width="35" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="rNJ-EQ-muS" secondAttribute="height" multiplier="1:1" id="ByS-cg-XOL"/>
+                                                                </constraints>
+                                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                                <state key="normal" backgroundImage="ic-favorite"/>
+                                                                <connections>
+                                                                    <action selector="didTapFavorite:" destination="kLe-iW-3Pz" eventType="touchUpInside" id="FWe-jB-CdL"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="rNJ-EQ-muS" secondAttribute="trailing" constant="12" id="ACw-t0-Vrb"/>
+                                                            <constraint firstItem="rNJ-EQ-muS" firstAttribute="centerY" secondItem="94z-Kk-Va1" secondAttribute="centerY" id="CNP-eV-kHa"/>
                                                             <constraint firstItem="zIm-9q-tjM" firstAttribute="leading" secondItem="94z-Kk-Va1" secondAttribute="leading" constant="12" id="FOK-UK-Vlm"/>
                                                             <constraint firstItem="zIm-9q-tjM" firstAttribute="top" secondItem="94z-Kk-Va1" secondAttribute="top" constant="12" id="MdS-TR-yEf"/>
+                                                            <constraint firstItem="rNJ-EQ-muS" firstAttribute="height" secondItem="zIm-9q-tjM" secondAttribute="height" multiplier="0.35" id="Nas-18-d99"/>
                                                             <constraint firstItem="YEX-UO-CUf" firstAttribute="centerY" secondItem="94z-Kk-Va1" secondAttribute="centerY" id="c3F-cI-goL"/>
                                                             <constraint firstItem="YEX-UO-CUf" firstAttribute="leading" secondItem="zIm-9q-tjM" secondAttribute="trailing" constant="12" id="f0h-sl-CYt"/>
                                                             <constraint firstAttribute="bottom" secondItem="zIm-9q-tjM" secondAttribute="bottom" constant="12" id="gms-2O-kBV"/>
-                                                            <constraint firstAttribute="trailing" secondItem="YEX-UO-CUf" secondAttribute="trailing" constant="12" id="mtC-Fj-rdK"/>
+                                                            <constraint firstItem="rNJ-EQ-muS" firstAttribute="leading" secondItem="YEX-UO-CUf" secondAttribute="trailing" constant="12" id="nsr-6T-qFC"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -267,6 +281,7 @@
                         <outlet property="artworkImageView" destination="zIm-9q-tjM" id="jqJ-2I-8uw"/>
                         <outlet property="backgroundImageView" destination="UuQ-pC-UIN" id="xxh-vd-e02"/>
                         <outlet property="descriptionLabel" destination="qAZ-aT-aYE" id="YRx-YW-xfg"/>
+                        <outlet property="favoriteButton" destination="rNJ-EQ-muS" id="REn-to-BFa"/>
                         <outlet property="genreLabel" destination="1Re-xq-g9d" id="4Od-Tz-Q8F"/>
                         <outlet property="priceLabel" destination="5ff-Yq-Uyt" id="4ce-Gg-S35"/>
                         <outlet property="titleLabel" destination="Ozr-Ji-nGk" id="BNh-9d-G1A"/>
@@ -308,6 +323,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic-favorite" width="36" height="36"/>
         <namedColor name="accentColor">
             <color red="0.067000001668930054" green="0.45500001311302185" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -21,6 +21,8 @@ class DetailController: UIViewController {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
   
+  @IBOutlet weak var favoriteButton: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -49,5 +51,21 @@ class DetailController: UIViewController {
     genreLabel.text = viewModel?.genre
     priceLabel.text = viewModel?.price
     descriptionLabel.text = viewModel?.description
+    
+    setFavoriteState(isFavorite: viewModel?.isFavorite ?? false)
+  }
+  
+  private func setFavoriteState(isFavorite: Bool) {
+    if isFavorite {
+      favoriteButton.setImage(R.image.icFavoriteFill(), for: .normal)
+    } else {
+      favoriteButton.setImage(R.image.icFavorite(), for: .normal)
+    }
+  }
+  
+  @IBAction func didTapFavorite(_ sender: Any) {
+    viewModel?.addToFavorites(completion: { [weak self] wasAdded in
+      self?.setFavoriteState(isFavorite: wasAdded)
+    })
   }
 }
