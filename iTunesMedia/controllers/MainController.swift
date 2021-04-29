@@ -90,7 +90,7 @@ class MainController: UIViewController {
     navigationItem.searchController = searchController
     navigationItem.rightBarButtonItem = favoritesButton
     
-    tableView.refreshControl = refreshControl
+    tableView.addSubview(refreshControl)
 
     tableView.register(R.nib.mediaCell)
     
