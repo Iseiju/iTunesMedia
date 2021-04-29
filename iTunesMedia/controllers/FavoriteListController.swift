@@ -25,12 +25,14 @@ class FavoriteListController: UIViewController {
     initObservables()
   }
   
+  // MARK: - Setup Views
   private func initViews() {
     tableView.register(R.nib.mediaCell)
     
     tableView.delegate = self
   }
   
+  // MARK: - Initialize Observable bindings
   private func initObservables() {
     viewModel?.getFavorites()
     

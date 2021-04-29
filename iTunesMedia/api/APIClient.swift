@@ -9,6 +9,11 @@
 import Alamofire
 import Foundation
 
+/// API Client - for request reusability
+///
+/// Usage Example:
+/// APIClient.shared.get(...)
+
 class APIClient {
   
   static var shared: APIClient = { return APIClient() }()

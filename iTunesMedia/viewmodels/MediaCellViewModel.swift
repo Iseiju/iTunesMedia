@@ -10,6 +10,7 @@ import Foundation
 
 class MediaCellViewModel {
   
+  // MARK: - Getters for UI bindings
   var id: Int { return media?.id ?? 0 }
     
   var isFavorite: Bool = false
@@ -22,6 +23,7 @@ class MediaCellViewModel {
   
   private var media: Media?
   
+  // MARK: - Initialize CellViewModel
   init(_ media: Media, _ isFavorite: Bool) {
     self.media = media
     self.isFavorite = isFavorite

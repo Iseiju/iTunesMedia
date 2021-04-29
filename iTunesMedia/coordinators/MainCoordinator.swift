@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+/// MainCoordinator - Coordinator class for Main Detail List screen
+///
+/// Usage:
+/// let coordinator = MainCoordinator(presentedController: yourPresentedController)
+///
+/// Push Detail List screen to navigation stack:
+/// coordinator.presentMain()
+
 class MainCoordinator {
   
   var presentedController: UIViewController?

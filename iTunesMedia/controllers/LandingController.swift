@@ -19,6 +19,7 @@ class LandingController: UIViewController {
     toMainScreen()
   }
 
+  // MARK: - Setup Animations and Navigations
   private func startAnimation() {
     UIView.animate(withDuration: 0.4) { [weak self] in
       self?.activityIndicator.isHidden = false

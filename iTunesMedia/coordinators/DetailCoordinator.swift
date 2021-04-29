@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+/// DetailCoordinator - Coordinator class for Detail screen
+///
+/// Usage:
+/// let coordinator = DetailCoordinator(navigationController: yourNavigationController)
+///
+/// Push Detail screen to navigation stack:
+/// coordinator.pushDetail(forCellViewModel cellviewModel: MediaCellViewModel)
+
 class DetailCoordinator {
   
   var navigationController: UINavigationController?

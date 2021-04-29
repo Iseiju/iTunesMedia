@@ -19,6 +19,7 @@ class MainViewModel {
   
   private let mediaRelay = BehaviorRelay<[Media]>(value: [])
   
+  // MARK: - Main API request
   func getMedia(completion: @escaping (_ isSuccess: Bool, _ errorOrNil: NSError?) -> Void) {
     let url = "https://itunes.apple.com/search?term=star&country=au&media=movie"
     
@@ -55,6 +56,7 @@ class MainViewModel {
     })
   }
   
+  // MARK: - Functions
   func filterMedia(query: String) {
     if query.isEmpty {
       mediaRelay.accept(listOfMedia)
@@ -82,6 +84,7 @@ class MainViewModel {
     mediaRelay.accept(self.mediaRelay.value)
   }
   
+  // MARK: - CellViewModel mapping and subscribing
   func cellViewModels() -> BehaviorRelay<[MediaCellViewModel]> {
     let cellViewModels = BehaviorRelay<[MediaCellViewModel]>(value: [])
     

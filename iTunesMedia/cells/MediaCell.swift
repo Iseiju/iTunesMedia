@@ -9,6 +9,7 @@
 import Kingfisher
 import UIKit
 
+// MARK: - Delegate functions
 protocol MediaCellDelegate {
   
   func didTapFavorites(_ cellViewModel: MediaCellViewModel)
@@ -28,15 +29,7 @@ class MediaCell: UITableViewCell {
   
   @IBOutlet weak var favoriteButton: UIButton!
   
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    self.selectionStyle = .none
-  }
-
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
-  
+  // MARK: - Initialize Cell
   func initCell(_ cellViewModel: MediaCellViewModel) {
     self.cellViewModel = cellViewModel
     
@@ -58,6 +51,7 @@ class MediaCell: UITableViewCell {
     }
   }
   
+  // MARK: - IBActions
   @IBAction func didTapFavorite(_ sender: Any) {
     guard let cellViewModel = self.cellViewModel else { return }
     delegate?.didTapFavorites(cellViewModel)

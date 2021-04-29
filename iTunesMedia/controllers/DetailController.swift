@@ -29,6 +29,7 @@ class DetailController: UIViewController {
     initViews()
   }
   
+  // MARK: - Setup Views
   private func initViews() {
     let url = URL(string: self.viewModel?.artwork ?? "")
     
@@ -55,6 +56,7 @@ class DetailController: UIViewController {
     setFavoriteState(isFavorite: viewModel?.isFavorite ?? false)
   }
   
+  // MARK: - Set Favorite state
   private func setFavoriteState(isFavorite: Bool) {
     if isFavorite {
       favoriteButton.setImage(R.image.icFavoriteFill(), for: .normal)

@@ -9,6 +9,12 @@
 import Foundation
 import RealmSwift
 
+/// Realm Client - for persistence request reusability
+///
+/// Usage Example:
+/// RealmClient.shared.queryAll(...)
+/// RealmClient.shared.saveAll(...)
+
 class RealmClient {
   
   static var shared: RealmClient = { return RealmClient() }()

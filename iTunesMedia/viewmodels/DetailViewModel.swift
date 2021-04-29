@@ -10,6 +10,7 @@ import Foundation
 
 class DetailViewModel {
   
+  // MARK: - Getters for UI bindings
   var id: Int { return cellViewModel?.id ?? 0 }
   
   var isFavorite: Bool { return cellViewModel?.isFavorite ?? false }
@@ -22,10 +23,12 @@ class DetailViewModel {
   
   private var cellViewModel: MediaCellViewModel?
   
+  // MARK: - Initialize CellViewModel
   init(cellViewModel: MediaCellViewModel) {
     self.cellViewModel = cellViewModel
   }
   
+  // MARK: - Functions
   func addToFavorites(completion: @escaping (_ wasAdded: Bool) -> Void) {
     let realmFavorites = RealmClient.shared.queryAll(Favorite.self)
     

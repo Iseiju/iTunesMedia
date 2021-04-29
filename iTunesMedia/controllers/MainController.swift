@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
+// MARK: - Delegate functions
 protocol MainControllerDelegate {
   
   func pushFavorites(controller: MainController)
@@ -62,6 +63,7 @@ class MainController: UIViewController {
     getMedia()
   }
   
+  // MARK: - Setup Views
   private func initViews() {
     let accentColor = R.color.accentColor() ?? UIColor()
     
@@ -95,6 +97,7 @@ class MainController: UIViewController {
     tableView.delegate = self
   }
   
+  // MARK: - Main network request
   private func getMedia() {
     showActivityIndicator()
     
@@ -108,6 +111,7 @@ class MainController: UIViewController {
     })
   }
   
+  // MARK: - @objc functions
   @objc private func refreshMediaList() {
     refreshControl.beginRefreshing()
     
@@ -122,6 +126,7 @@ class MainController: UIViewController {
     delegate?.pushFavorites(controller: self)
   }
   
+  // MARK: - Initialize Observable bindings
   private func initObservables() {
     viewModel?
       .cellViewModels()
@@ -157,6 +162,7 @@ class MainController: UIViewController {
       }).disposed(by: disposeBag)
   }
   
+  // MARK: - Private functions
   private func showActivityIndicator() {
     activityIndicatorView.isHidden = false
     errorStackView.isHidden = true
@@ -176,6 +182,7 @@ class MainController: UIViewController {
     messageLabel.text = message
   }
   
+  // MARK: - IBActions
   @IBAction func didTapTryAgain(_ sender: Any) {
     getMedia()
   }

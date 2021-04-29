@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+/// FavoritesCoordinator - Coordinator class for Favorites screen
+///
+/// Usage:
+/// let coordinator = FavoritesCoordinator(navigationController: yourNavigationController)
+///
+/// Push Favorites screen to navigation stack:
+/// coordinator.pushFavoriteList()
+
 class FavoritesCoordinator {
   
   var navigationController: UINavigationController?

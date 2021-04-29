@@ -17,6 +17,7 @@ class FavoriteViewModel {
   
   private let mediaRelay = BehaviorRelay<[Media]>(value: [])
   
+  // MARK: - Get Favorite list in Persistence layer
   func getFavorites() {
     let mediaList = RealmClient.shared.queryAll(Media.self)
     let favorites = RealmClient.shared.queryAll(Favorite.self)
@@ -30,6 +31,7 @@ class FavoriteViewModel {
     mediaRelay.accept(filteredMedia)
   }
   
+  // MARK: - Functions
   func removeFromFavorites(_ cellViewModel: MediaCellViewModel) {
     let id = cellViewModel.id
     let favoriteToRemove = RealmClient
@@ -42,6 +44,7 @@ class FavoriteViewModel {
     getFavorites()
   }
   
+  // MARK: - CellViewModel mapping and subscribing
   func cellViewModels() -> BehaviorRelay<[MediaCellViewModel]> {
     let cellViewModels = BehaviorRelay<[MediaCellViewModel]>(value: [])
     
